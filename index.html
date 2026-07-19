@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anya Lazarenko | Technical Program Manager</title>
+  <title>Anya Lazarenko | Technical Program Manager · Project Manager</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,600&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -220,8 +220,7 @@
     .stat-number span { color: var(--white); }
     .stat-label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
 
-    /* ── EXPERIENCE ── */
-    #experience { border-top: 1px solid var(--border); background: var(--surface); }
+    /* ── LISTS (certifications) ── */
     .exp-list { margin-top: 1rem; }
     .exp-item {
       display: grid;
@@ -251,40 +250,6 @@
       color: var(--muted);
       letter-spacing: 0.04em;
     }
-
-    /* ── SKILLS ── */
-    #skills { border-top: 1px solid var(--border); }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-    .skill-group {
-      border: 1px solid var(--border);
-      padding: 2rem;
-      background: var(--surface);
-      transition: border-color 0.2s;
-    }
-    .skill-group:hover { border-color: var(--accent); }
-    .skill-group-title {
-      font-family: 'Source Serif 4', serif;
-      font-weight: 600;
-      font-size: 1rem;
-      color: var(--white);
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.01em;
-    }
-    .skill-list { list-style: none; }
-    .skill-list li {
-      font-size: 0.9rem;
-      color: var(--muted);
-      padding: 0.45rem 0;
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 0.5rem;
-    }
-    .skill-list li:last-child { border-bottom: none; }
-    .skill-list li::before { content: '→'; color: var(--accent); font-size: 0.75rem; }
 
     /* ── CONTACT ── */
     #contact {
@@ -322,7 +287,6 @@
       section { padding: 4rem 1.5rem; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
-      .skills-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
 
@@ -428,11 +392,9 @@
     <div class="nav-logo">Anya Lazarenko</div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -440,12 +402,12 @@
   <!-- HERO -->
   <section class="hero">
     <div>
-      <div class="hero-eyebrow">Technical Program Manager · Program & Project Delivery</div>
+      <div class="hero-eyebrow">Technical Program Manager · Project Manager</div>
       <h1>From roadmap<br/>to <em>released</em>.</h1>
       <p class="hero-sub">
-        11 years in tech. 9 at Snap. I own roadmaps, milestones, risks, and launch
-        readiness for consumer mobile, web, and API programs. I drive go/no-go decisions
-        at consumer scale. And I build AI agents into the delivery workflow itself.
+        I own roadmaps, milestones, risks, and launch readiness for consumer mobile,
+        web, and API programs used by millions of daily active users. I drive go/no-go
+        decisions at consumer scale. And I build AI agents into the delivery workflow itself.
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Get in touch</a>
@@ -464,16 +426,17 @@
       <div class="about-text fade-in">
         <h2>Program delivery,<br/>proven at scale.</h2>
         <p>
-          My title said engineer. My work said <strong>program manager</strong>.
-          For the last five years at Snap I owned end-to-end delivery for 10+ major
-          AR and camera launches per quarter. Each one required go/no-go alignment
-          across 5 to 8 partner teams.
+          I turn ambiguity into execution plans. At Snap I drove <strong>release governance
+          and go/no-go decision-making</strong> for 10+ major consumer product launches per
+          quarter, coordinating partner teams across AR and camera products on iOS, Android,
+          web, and API surfaces.
         </p>
         <p>
-          That is years of documented program leadership. Roadmap execution, milestone
-          tracking, risk and dependency management, a vendor program of 8+ offshore
-          engineers, and Scrum leadership. It is the <strong>same verified experience
-          base behind my PMP candidacy</strong>.
+          I delivered an internal content platform that lets product teams ship in-app
+          content to <strong>400M+ daily active users</strong>, drove the company's first
+          content-monetization path for creators from charter through launch, built a vendor
+          program of 8+ offshore engineers, and cut open high-priority issues from 150+ to
+          roughly 10 a month with a cross-team operating model adopted by engineering leadership.
         </p>
         <p>
           I also build <strong>AI into the delivery system itself</strong>. My Claude Code
@@ -483,134 +446,28 @@
       </div>
       <div class="stat-grid fade-in">
         <div class="stat-card">
+          <div class="stat-number">400M<span>+</span></div>
+          <div class="stat-label">Daily active users reached</div>
+        </div>
+        <div class="stat-card">
           <div class="stat-number">10<span>+</span></div>
           <div class="stat-label">Major launches per quarter</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">9</div>
-          <div class="stat-label">Years at Snap Inc.</div>
+          <div class="stat-number">150→10</div>
+          <div class="stat-label">High-priority open issues</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">$2K<span>/day</span></div>
-          <div class="stat-label">CI cost savings delivered</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">10<span>x</span></div>
-          <div class="stat-label">Fewer high-priority open issues</div>
+          <div class="stat-number">8<span>+</span></div>
+          <div class="stat-label">Offshore engineers managed</div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="section-label">02 / Experience</div>
-    <h2>Where I've done<br/>the work.</h2>
-    <div class="exp-list">
-
-      <div class="exp-item fade-in">
-        <div class="exp-meta">
-          <div class="exp-period">2021 - 2026</div>
-          <div class="exp-company">Snap Inc.</div>
-        </div>
-        <div>
-          <div class="exp-title">Program Delivery Lead · AR, Camera & Web (Senior Quality Engineer)</div>
-          <div class="exp-desc">
-            Single-threaded owner for 10+ major consumer AR and camera launches per quarter,
-            across iOS, Android, web, and API surfaces.
-            Drove end-to-end delivery and go/no-go alignment across 5 to 8 partner teams per launch.
-            Translated ambiguous priorities into Jira workstreams, launch criteria, and readiness
-            documentation. Cut high-priority backlog from 150+ issues to about 10 with a
-            cross-team triage operating rhythm. Ran Agile delivery as Scrum Master for a core
-            platform team of 8 to 10 engineers. Built a vendor execution model covering 8+
-            offshore engineers. Optimized mobile CI strategy and saved an estimated $2K per day.
-            Launched an AI-assisted coverage optimization program projected to cut regression
-            cycle time by more than half.
-          </div>
-          <div class="exp-tags">
-            <span class="tag">Program Delivery</span>
-            <span class="tag">Go/No-Go</span>
-            <span class="tag">Risk & Dependencies</span>
-            <span class="tag">Vendor Management</span>
-            <span class="tag">Scrum Master</span>
-            <span class="tag">BigQuery</span>
-            <span class="tag">Grafana</span>
-            <span class="tag">CI/CD</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="exp-item fade-in">
-        <div class="exp-meta">
-          <div class="exp-period">2017 - 2021</div>
-          <div class="exp-company">Snap Inc.</div>
-        </div>
-        <div>
-          <div class="exp-title">Release Governance · Mobile & Web (QA Engineer)</div>
-          <div class="exp-desc">
-            Led issue triage and release governance for recurring release trains across
-            consumer mobile and web products. Partnered with 5 to 10 engineers and PMs
-            per cycle to prioritize blockers and negotiate scope. Lead for a ground-up
-            Android platform rewrite, surfacing schedule and dependency risks to leadership.
-            Coordinated launches reaching tens of millions of daily users.
-          </div>
-          <div class="exp-tags">
-            <span class="tag">Release Governance</span>
-            <span class="tag">Issue Triage</span>
-            <span class="tag">Scope Negotiation</span>
-            <span class="tag">iOS & Android</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="exp-item fade-in">
-        <div class="exp-meta">
-          <div class="exp-period">2015 - 2017</div>
-          <div class="exp-company">Gardenize</div>
-        </div>
-        <div>
-          <div class="exp-title">Scrum Master & Technical Liaison (QA Engineer)</div>
-          <div class="exp-desc">
-            Ran biweekly delivery for web, iOS, Android, and API releases at a startup.
-            Managed a 100+ task backlog and facilitated all Agile ceremonies. Cut manual
-            testing hours by 30% by introducing regression automation.
-          </div>
-          <div class="exp-tags">
-            <span class="tag">Scrum Master</span>
-            <span class="tag">Backlog Management</span>
-            <span class="tag">Biweekly Delivery</span>
-            <span class="tag">Automation</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="exp-item fade-in">
-        <div class="exp-meta">
-          <div class="exp-period">2013 - 2015</div>
-          <div class="exp-company">Kadorr Group</div>
-        </div>
-        <div>
-          <div class="exp-title">Finance Project Manager</div>
-          <div class="exp-desc">
-            Managed reporting, budget tracking, and procurement coordination across 3 large
-            residential construction projects. Ran tender documentation and contractor
-            selection with multiple parallel workstreams.
-          </div>
-          <div class="exp-tags">
-            <span class="tag">Budget Tracking</span>
-            <span class="tag">Procurement</span>
-            <span class="tag">Stakeholder Management</span>
-            <span class="tag">Project Management</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
-    <div class="section-label">03 / Projects</div>
+    <div class="section-label">02 / Projects</div>
     <h2>Program management,<br/>in the open.</h2>
     <p style="color:var(--muted); max-width:620px; margin-bottom:2rem; font-size:1.05rem;">
       I run my own product as a public program. Every roadmap, spec, risk register,
@@ -619,30 +476,12 @@
     <div class="projects-grid">
 
       <div class="project-card fade-in">
-        <div class="project-eyebrow"><span>Flagship program</span><span class="status-pill live">In progress</span></div>
-        <div class="service-title">LingoDeck · Product Program</div>
-        <div class="service-desc">
-          A language-learning flashcard app that I lead end-to-end. Spaced repetition,
-          audio-first cards, real-life topic packs. The public repo is the program layer:
-          quarterly roadmap, feature specs with an index, scored risk register, ADRs,
-          and go/no-go release gates. The same practices I ran at Snap, applied to my own product.
-        </div>
-        <div class="service-tags">
-          <span class="service-tag">Roadmap</span>
-          <span class="service-tag">Specs</span>
-          <span class="service-tag">Risk register</span>
-          <span class="service-tag">Release gates</span>
-        </div>
-        <a class="project-link" href="https://github.com/Ann-reva/lingodeck-program" target="_blank">View on GitHub →</a>
-      </div>
-
-      <div class="project-card fade-in">
         <div class="project-eyebrow"><span>AI automation</span><span class="status-pill live">Shipped</span></div>
         <div class="service-title">PM Agent Toolkit</div>
         <div class="service-desc">
-          Claude Code subagents that automate the routine parts of program management:
-          a decomposer that turns ideas into epics, tasks, and spec drafts; a risk analyst;
-          an auto status reporter; and a release gatekeeper that audits go/no-go readiness.
+          Four AI agents (Claude Code) that automate program planning: work breakdown
+          into epics and dependencies, probability × impact risk scoring, weekly status
+          reports, and release go/no-go calls. Cut feature planning from 30 minutes to 2.
           The agent proposes. The PM decides.
         </div>
         <div class="service-tags">
@@ -654,22 +493,25 @@
       </div>
 
       <div class="project-card fade-in">
-        <div class="project-eyebrow"><span>Playbook</span><span class="status-pill">In progress</span></div>
-        <div class="service-title">PM Playbook</div>
+        <div class="project-eyebrow"><span>Flagship program</span><span class="status-pill live">In progress</span></div>
+        <div class="service-title">LingoDeck · Mobile Vocabulary App</div>
         <div class="service-desc">
-          Case studies from 9 years shipping consumer mobile at Snap. Launch readiness,
-          quality gates, and cross-team dependency management. Plus the templates I actually
-          use: RFC, blameless postmortem, and launch checklist.
+          A cross-platform iOS/Android vocabulary-learning app (React Native) using the
+          Claude API for personalized practice. I own the full lifecycle: scope, roadmap,
+          and architecture, including a swappable multi-model AI layer. The public repo is
+          the program layer: roadmap, feature specs, scored risk register, and go/no-go
+          release gates.
         </div>
         <div class="service-tags">
-          <span class="service-tag">Case studies</span>
-          <span class="service-tag">Templates</span>
-          <span class="service-tag">Process design</span>
+          <span class="service-tag">React Native</span>
+          <span class="service-tag">Claude API</span>
+          <span class="service-tag">Roadmap</span>
+          <span class="service-tag">Release gates</span>
         </div>
-        <a class="project-link" href="https://github.com/Ann-reva/pm-playbook" target="_blank">View on GitHub →</a>
+        <a class="project-link" href="https://github.com/Ann-reva/lingodeck-program" target="_blank">View on GitHub →</a>
       </div>
 
-      <div class="project-card fade-in">
+      <div class="project-card fade-in" style="grid-column: 1 / -1;">
         <div class="project-eyebrow"><span>Everything else</span><span class="status-pill live">Live</span></div>
         <div class="service-title">GitHub Profile</div>
         <div class="service-desc">
@@ -687,60 +529,9 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="section-label">04 / Skills</div>
-    <h2>What I bring<br/>to the table.</h2>
-    <div class="skills-grid">
-      <div class="skill-group fade-in">
-        <div class="skill-group-title">Delivery & Roadmaps</div>
-        <ul class="skill-list">
-          <li>Roadmap execution</li>
-          <li>Milestones & release schedules</li>
-          <li>Risk & dependency management</li>
-          <li>Cross-org go/no-go alignment</li>
-          <li>Offshore vendor programs</li>
-          <li>Agile / Scrum leadership</li>
-        </ul>
-      </div>
-      <div class="skill-group fade-in">
-        <div class="skill-group-title">Readiness & Launch</div>
-        <ul class="skill-list">
-          <li>Launch readiness</li>
-          <li>Production readiness criteria</li>
-          <li>Quality gates & validation signals</li>
-          <li>Issue triage & escalation</li>
-          <li>Release governance</li>
-          <li>Requirements traceability</li>
-        </ul>
-      </div>
-      <div class="skill-group fade-in">
-        <div class="skill-group-title">Tools & Data</div>
-        <ul class="skill-list">
-          <li>Jira / Confluence</li>
-          <li>BigQuery / SQL</li>
-          <li>Grafana dashboards</li>
-          <li>GitHub / CI/CD workflows</li>
-          <li>Python</li>
-          <li>Consumer mobile, web & API platforms</li>
-        </ul>
-      </div>
-      <div class="skill-group fade-in">
-        <div class="skill-group-title">AI-Integrated Delivery</div>
-        <ul class="skill-list">
-          <li>Claude Code subagents in the delivery workflow</li>
-          <li>AI-drafted specs, risk registers, status reports</li>
-          <li>AI-assisted coverage optimization (2.5x workload cut)</li>
-          <li>Agentic workflow design & governance</li>
-          <li>Prompt engineering for TPM tasks</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
   <!-- SERVICES -->
   <section id="services">
-    <div class="section-label">05 / Services</div>
+    <div class="section-label">03 / Services</div>
     <h2>How I can help<br/>your team.</h2>
     <div class="services-grid">
 
@@ -821,11 +612,11 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="contact-inner">
-      <div class="section-label" style="justify-content:center">06 / Contact</div>
+      <div class="section-label" style="justify-content:center">04 / Contact</div>
       <h2>Let's talk.</h2>
       <p>
-        I'm actively exploring TPM and program management roles in consumer tech
-        and AR/camera products. I bring delivery discipline and technical depth.
+        I'm actively exploring TPM, program, and project management roles in consumer
+        tech and AR/camera products. I bring delivery discipline and technical depth.
       </p>
       <div class="contact-links">
         <a href="mailto:anlare820@gmail.com" class="contact-link">
@@ -844,23 +635,11 @@
     </div>
   </section>
 
-  <!-- EDUCATION -->
-  <section id="education" style="border-top: 1px solid var(--border);">
-    <div class="section-label">07 / Education & Credentials</div>
-    <h2>The foundation.</h2>
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" style="border-top: 1px solid var(--border);">
+    <div class="section-label">05 / Certifications</div>
+    <h2>Certified.</h2>
     <div class="exp-list">
-
-      <div class="exp-item fade-in">
-        <div class="exp-meta">
-          <div class="exp-period">In progress</div>
-          <div class="exp-company">PMI</div>
-        </div>
-        <div>
-          <div class="exp-title">Project Management Professional (PMP)</div>
-          <div class="exp-desc">Exam preparation in progress. Application backed by 36+ months of verified program leadership experience.</div>
-          <div class="exp-tags"><span class="tag">Program Management</span><span class="tag">PMI</span><span class="tag">In Progress</span></div>
-        </div>
-      </div>
 
       <div class="exp-item fade-in">
         <div class="exp-meta">
@@ -876,34 +655,13 @@
 
       <div class="exp-item fade-in">
         <div class="exp-meta">
-          <div class="exp-company">Odesa Polytechnic National University</div>
+          <div class="exp-period">In progress</div>
+          <div class="exp-company">PMI</div>
         </div>
         <div>
-          <div class="exp-title">Master's Degree, Computer Science</div>
-          <div class="exp-desc">Specialization: IT Project Management.</div>
-          <div class="exp-tags"><span class="tag">IT Project Management</span><span class="tag">Computer Science</span></div>
-        </div>
-      </div>
-
-      <div class="exp-item fade-in">
-        <div class="exp-meta">
-          <div class="exp-company">Odesa Polytechnic National University</div>
-        </div>
-        <div>
-          <div class="exp-title">Master's Degree, Economics of Enterprise</div>
-          <div class="exp-desc">Strategic planning, financial analysis, and business management.</div>
-          <div class="exp-tags"><span class="tag">Economics</span><span class="tag">Strategic Planning</span></div>
-        </div>
-      </div>
-
-      <div class="exp-item fade-in">
-        <div class="exp-meta">
-          <div class="exp-company">Odesa Polytechnic National University</div>
-        </div>
-        <div>
-          <div class="exp-title">Bachelor's Degree, Economics of Enterprise</div>
-          <div class="exp-desc">Foundation in economics, finance, and business administration.</div>
-          <div class="exp-tags"><span class="tag">Economics</span><span class="tag">Finance</span></div>
+          <div class="exp-title">Project Management Professional (PMP)</div>
+          <div class="exp-desc">Exam preparation in progress. Application backed by verified program leadership experience.</div>
+          <div class="exp-tags"><span class="tag">Program Management</span><span class="tag">PMI</span><span class="tag">In Progress</span></div>
         </div>
       </div>
 
