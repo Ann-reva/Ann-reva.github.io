@@ -65,8 +65,29 @@
     .nav-links a:hover { color: var(--white); }
 
     .hero {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 4rem;
+      align-items: center;
       padding: 8.5rem 4rem 4rem;
-      max-width: 900px;
+    }
+    .hero-photo {
+      align-self: center;
+      justify-self: end;
+      width: 100%;
+      max-width: 320px;
+    }
+    .hero-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-photo { justify-self: start; max-width: 240px; }
     }
     .hero-eyebrow {
       font-size: 0.8rem;
@@ -240,14 +261,19 @@
   </nav>
 
   <section class="hero">
-    <div class="hero-eyebrow">Process Automation</div>
-    <h1>I automate your leads, follow-ups, and busywork.</h1>
-    <p class="hero-sub">
-      No-code workflow automation using n8n, Make, and AI. If you're doing something
-      by hand every week, there's a good chance it can run itself.
-    </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Get in touch</a>
+    <div>
+      <div class="hero-eyebrow">Process Automation</div>
+      <h1>I automate your leads, follow-ups, and busywork.</h1>
+      <p class="hero-sub">
+        No-code workflow automation using n8n, Make, and AI. If you're doing something
+        by hand every week, there's a good chance it can run itself.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="anya.jpg" alt="Anya Lazarenko" />
     </div>
   </section>
 
