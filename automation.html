@@ -1,246 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Process Automation | Anya Lazarenko</title>
-<meta name="description" content="Workflow automation for small businesses, e-commerce, real estate, and professional services. Automate lead follow-up, reporting, and repetitive admin using n8n, Make, and AI.">
-<style>
-  :root{
-    --bg: #FAF9F6;
-    --bg-raised: #F1EEE7;
-    --text: #1C1B19;
-    --text-muted: #756F66;
-    --line: #E4E0D7;
-    --green: #2E9B5C;
-    --green-dark: #1F7A45;
-    --green-tint: #DFF3E6;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;}
-  .wrap{max-width:840px; margin:0 auto; padding:0 24px;}
-  svg{ display:block; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Process Automation | Anya Lazarenko</title>
+  <meta name="description" content="Workflow automation for small businesses, e-commerce, real estate, and professional services. Automate lead follow-up, reporting, and repetitive admin using n8n, Make, and AI." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,600&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  header{
-    display:flex; justify-content:space-between; align-items:center;
-    padding:28px 24px; max-width:840px; margin:0 auto;
-    border-bottom:1px solid var(--line);
-  }
-  header .home-link{
-    font-size:14px; color:var(--text-muted); text-decoration:none;
-    border-bottom:1px solid transparent;
-    transition: border-color .2s ease, color .2s ease;
-  }
-  header .home-link:hover{ color:var(--green-dark); border-color:var(--green); }
+    :root {
+      --bg: #16181d;
+      --surface: #1c1f25;
+      --border: #2b2e35;
+      --accent: #e0a83e;
+      --accent2: #e0a83e;
+      --accent-soft: rgba(224, 168, 62, 0.12);
+      --text: #ece8e0;
+      --muted: #93908a;
+      --white: #f7f4ee;
+    }
 
-  .cta{
-    display:inline-block;
-    padding:13px 26px;
-    background:var(--green);
-    color:#fff;
-    font-weight:600;
-    font-size:15px;
-    text-decoration:none;
-    border-radius:6px;
-    box-shadow: 0 4px 14px rgba(46, 155, 92, 0.35);
-    transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
-  }
-  .cta:hover{
-    background:var(--green-dark);
-    transform:translateY(-2px);
-    box-shadow: 0 8px 20px rgba(46, 155, 92, 0.45);
-  }
-  .cta:active{ transform:translateY(0); box-shadow: 0 3px 10px rgba(46, 155, 92, 0.35); }
-  .hero .cta{ margin-top:36px; }
+    html { scroll-behavior: smooth; }
 
-  .hero{ padding:96px 0 72px; }
-  .hero h1{
-    font-size:clamp(32px, 5vw, 48px);
-    font-weight:600;
-    line-height:1.15;
-    letter-spacing:-0.01em;
-    max-width:14ch;
-    color:var(--text);
-  }
-  .hero .sub{
-    margin-top:20px;
-    font-size:18px;
-    color:var(--text-muted);
-    max-width:52ch;
-  }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Archivo', sans-serif;
+      font-weight: 300;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
 
-  section{ padding:64px 0; border-top:1px solid var(--line); }
-  section h2{
-    font-size:26px;
-    font-weight:600;
-    margin-bottom:36px;
-    max-width:24ch;
-  }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 4rem;
+      border-bottom: 1px solid transparent;
+      backdrop-filter: blur(12px);
+      background: rgba(13,13,15,0.7);
+      transition: border-color 0.3s;
+    }
+    nav.scrolled { border-color: var(--border); }
+    .nav-logo {
+      font-family: 'Source Serif 4', serif;
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
 
-  .automate-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:32px;
-  }
-  .automate-item{ display:flex; gap:16px; }
-  .automate-item .icon{
-    flex-shrink:0;
-    width:36px; height:36px;
-    border-radius:10px;
-    background:var(--green-tint);
-    display:flex; align-items:center; justify-content:center;
-    color:var(--green-dark);
-  }
-  .automate-item h3{ font-size:16px; font-weight:600; margin-bottom:6px; color:var(--text); }
-  .automate-item p{ color:var(--text-muted); font-size:14.5px; }
+    .hero {
+      padding: 8.5rem 4rem 4rem;
+      max-width: 900px;
+    }
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px; height: 1px;
+      background: var(--accent);
+    }
+    h1 {
+      font-family: 'Source Serif 4', serif;
+      font-weight: 600;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      max-width: 700px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 1rem; }
+    .btn-primary {
+      background: var(--accent);
+      color: #16181d;
+      border: none;
+      padding: 0.85rem 2rem;
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
 
-  .verticals{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px; }
-  .verticals span{
-    font-size:14px;
-    padding:8px 16px;
-    background:var(--bg-raised);
-    border-radius:20px;
-    color:var(--text);
-  }
+    section { padding: 4rem 4rem; }
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px; height: 1px;
+      background: var(--accent);
+    }
+    h2 {
+      font-family: 'Source Serif 4', serif;
+      font-weight: 600;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      letter-spacing: -0.03em;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
 
-  .why-me p{ color:var(--text-muted); font-size:16px; max-width:58ch; }
-  .why-me p + p{ margin-top:16px; }
+    #automate { border-top: 1px solid var(--border); background: var(--surface); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .service-card {
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      background: var(--bg);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .service-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .service-icon {
+      width: 40px; height: 40px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    .service-title {
+      font-family: 'Source Serif 4', serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+    .service-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+    @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
 
-  .contact h2{ margin-bottom:16px; }
-  .contact p{ color:var(--text-muted); margin-bottom:28px; max-width:52ch; }
-  .contact a.email{
-    font-size:20px;
-    color:var(--green-dark);
-    text-decoration:none;
-    border-bottom:1px solid var(--green);
-  }
-  .contact a.email:hover{ color:var(--text); border-color:var(--text); }
+    #verticals { border-top: 1px solid var(--border); }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+    .tag {
+      font-size: 0.8rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
 
-  footer{
-    padding:40px 0 60px;
-    color:var(--text-muted);
-    font-size:13px;
-  }
-  footer a{ color:var(--green-dark); }
+    #why { border-top: 1px solid var(--border); }
+    #why p { color: var(--muted); max-width: 640px; font-size: 1.05rem; }
 
-  .reveal{
-    opacity:0;
-    transform:translateY(14px);
-    transition: opacity .6s ease, transform .6s ease;
-  }
-  .reveal.in{ opacity:1; transform:translateY(0); }
+    #contact {
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      text-align: center;
+    }
+    .contact-inner { max-width: 600px; margin: 0 auto; }
+    .contact-inner p { color: var(--muted); margin: 1rem 0 2rem; font-size: 1.05rem; }
+    .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+    .contact-link {
+      display: flex; align-items: center; gap: 0.5rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: 1px solid var(--border);
+      padding: 0.7rem 1.4rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .contact-link:hover { color: var(--accent); border-color: var(--accent); }
 
-  @media (max-width:600px){
-    .automate-grid{ grid-template-columns:1fr; }
-    .hero{ padding:64px 0 48px; }
-  }
-</style>
+    footer {
+      padding: 2rem 4rem;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.8rem; color: var(--muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { padding: 7rem 1.5rem 3rem; }
+      section { padding: 3rem 1.5rem; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
 <body>
 
-<header>
-  <a class="home-link" href="index.html">← Anya Lazarenko</a>
-</header>
-
-<div class="wrap">
+  <nav id="nav">
+    <a class="nav-logo" href="index.html">Anya Lazarenko</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Main site</a></li>
+      <li><a href="#automate">What I automate</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <section class="hero">
+    <div class="hero-eyebrow">Process Automation</div>
     <h1>I automate your leads, follow-ups, and busywork.</h1>
-    <p class="sub">No-code workflow automation using n8n, Make, and AI. If you're doing something by hand every week, there's a good chance it can run itself.</p>
-    <a class="cta" href="#contact">Get in touch</a>
+    <p class="hero-sub">
+      No-code workflow automation using n8n, Make, and AI. If you're doing something
+      by hand every week, there's a good chance it can run itself.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get in touch</a>
+    </div>
   </section>
 
-  <section class="reveal">
-    <h2>What I automate</h2>
-    <div class="automate-grid">
+  <section id="automate">
+    <div class="section-label">01 / What I automate</div>
+    <div class="services-grid">
 
-      <div class="automate-item">
-        <div class="icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
         </div>
-        <div>
-          <h3>Leads falling through the cracks</h3>
-          <p>A new lead comes in and sits in an inbox for two days before anyone follows up. I connect your forms, DMs, or calls straight to your CRM, with follow-up sent automatically.</p>
-        </div>
+        <div class="service-title">Leads falling through the cracks</div>
+        <div class="service-desc">A new lead sits in an inbox for two days before anyone follows up. I connect your forms, DMs, or calls straight to your CRM, with follow-up sent automatically.</div>
       </div>
 
-      <div class="automate-item">
-        <div class="icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
         </div>
-        <div>
-          <h3>Copying data between tools by hand</h3>
-          <p>Same customer, same order, typed into three different systems. I wire your tools together so the data moves on its own.</p>
-        </div>
+        <div class="service-title">Copying data between tools by hand</div>
+        <div class="service-desc">Same customer, same order, typed into three different systems. I wire your tools together so the data moves on its own.</div>
       </div>
 
-      <div class="automate-item">
-        <div class="icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10l6 3"/><circle cx="12" cy="12" r="10"/></svg>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v10l6 3"/><circle cx="12" cy="12" r="10"/></svg>
         </div>
-        <div>
-          <h3>The report you build every Friday</h3>
-          <p>Same spreadsheet, same charts, same copy-paste, every week. I set it up once so the numbers show up on their own.</p>
-        </div>
+        <div class="service-title">The report you build every Friday</div>
+        <div class="service-desc">Same spreadsheet, same charts, same copy-paste, every week. I set it up once so the numbers show up on their own.</div>
       </div>
 
-      <div class="automate-item">
-        <div class="icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <div>
-          <h3>Onboarding new clients manually</h3>
-          <p>Welcome emails, account setup, document requests, all sent one at a time. I turn it into a sequence that fires the moment someone signs up.</p>
-        </div>
+        <div class="service-title">Onboarding new clients manually</div>
+        <div class="service-desc">Welcome emails, account setup, document requests, all sent one at a time. I turn it into a sequence that fires the moment someone signs up.</div>
       </div>
 
     </div>
   </section>
 
-  <section class="reveal">
-    <h2>Who I work with</h2>
-    <div class="verticals">
-      <span>Small service businesses</span>
-      <span>E-commerce &amp; Shopify stores</span>
-      <span>Real estate</span>
-      <span>Professional services</span>
-      <span>Startups &amp; small teams</span>
+  <section id="verticals">
+    <div class="section-label">02 / Who I work with</div>
+    <div class="tag-row">
+      <span class="tag">Small service businesses</span>
+      <span class="tag">E-commerce &amp; Shopify stores</span>
+      <span class="tag">Real estate</span>
+      <span class="tag">Professional services</span>
+      <span class="tag">Startups &amp; small teams</span>
     </div>
-    <a class="cta" href="#contact">Get in touch</a>
+    <a href="#contact" class="btn-primary">Get in touch</a>
   </section>
 
-  <section class="reveal why-me">
-    <h2>Why me</h2>
-    <p>I've spent over a decade running delivery for consumer products used by hundreds of millions of people. For the past few years, that work has centered on automation itself: building the AI-driven systems that keep a high-volume product process running without someone babysitting it every step.</p>
+  <section id="why">
+    <div class="section-label">03 / Why me</div>
+    <p>
+      I've spent over a decade running delivery for consumer products used by hundreds
+      of millions of people. For the past few years, that work has centered on automation
+      itself: building the AI-driven systems that keep a high-volume product process
+      running without someone babysitting it every step.
+    </p>
   </section>
 
-  <section class="reveal contact" id="contact">
-    <h2>Let's talk.</h2>
-    <p>Tell me what's eating your time. I'll tell you honestly whether it's worth automating and roughly what it would take.</p>
-    <a class="email" href="mailto:hello@anyalazarenko.com">hello@anyalazarenko.com</a>
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="section-label" style="justify-content:center">04 / Contact</div>
+      <h2>Let's talk.</h2>
+      <p>Tell me what's eating your time. I'll tell you honestly whether it's worth automating and roughly what it would take.</p>
+      <div class="contact-links">
+        <a href="mailto:hello@anyalazarenko.com" class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          hello@anyalazarenko.com
+        </a>
+      </div>
+    </div>
   </section>
 
   <footer>
-    Anya Lazarenko &middot; <a href="index.html">Back to main site</a>
+    <span>Anya Lazarenko</span>
+    <span><a href="index.html">Back to main site</a></span>
   </footer>
 
-</div>
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
 
-<script>
-  const items = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.15 });
-  items.forEach(el => io.observe(el));
-</script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
