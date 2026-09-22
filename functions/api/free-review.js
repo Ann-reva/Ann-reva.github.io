@@ -13,7 +13,9 @@ export async function onRequestPost({ request, env }) {
 
   let body;
   try {
-    body = await request.json();
+    const raw = await request.text();
+    if (raw.length > 12000) return reply('Request too large', 413);
+    body = JSON.parse(raw);
   } catch {
     return reply('Invalid JSON', 400);
   }
@@ -38,7 +40,27 @@ export async function onRequestPost({ request, env }) {
       if (!['http:', 'https:'].includes(url.protocol)) return reply('Invalid website URL', 400);
     } catch { return reply('Invalid website URL', 400); }
   }
-  if (!env.N8N_WEBHOOK_URL) return reply('Service unavailable', 503);
+  if (!env.N8N_WEBHOOK_URL || !env.TURNSTILE_SECRET_KEY) return reply('Service unavailable', 503);
+
+  const token = body['cf-turnstile-response'];
+  if (typeof token !== 'string' || !token || token.length > 2048) {
+    return reply('Please complete the security check', 400);
+  }
+
+  try {
+    const verification = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      body: new URLSearchParams({ secret: env.TURNSTILE_SECRET_KEY, response: token }),
+      signal: AbortSignal.timeout(5000),
+    });
+    if (!verification.ok) return reply('Security check unavailable', 503);
+    const result = await verification.json();
+    if (!result.success || !['anyalazarenko.com', 'www.anyalazarenko.com'].includes(result.hostname)) {
+      return reply('Security check failed', 403);
+    }
+  } catch {
+    return reply('Security check unavailable', 503);
+  }
 
   try {
     const response = await fetch(env.N8N_WEBHOOK_URL, {
