@@ -26,11 +26,10 @@ const post = (body, config = env) => onRequestPost({
 
 afterEach(() => mock.restoreAll());
 
-test('homepage uses the current portrait and Free Review page contains the verification widget', () => {
+test('homepage has no portrait photo and Free Review page contains the verification widget', () => {
   const home = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
   const review = readFileSync(new URL('../automation.html', import.meta.url), 'utf8');
-  assert.match(home, /<img src="Subject_2\.png" alt="Anya Lazarenko">/);
-  assert.ok(existsSync(new URL('../Subject_2.png', import.meta.url)));
+  assert.doesNotMatch(home, /class="portrait"/);
   assert.match(review, /data-sitekey="0x4AAAAAAE_iDpi6MqyoBjqm"/);
   assert.match(review, /name="email" type="email"/);
 });
