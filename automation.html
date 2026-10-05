@@ -1,53 +1,320 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI & Workflow Automation | Anya Lazarenko</title><meta name="description" content="AI and workflow automation for small businesses: leads, follow-ups, onboarding, reporting, and repetitive operations. Get a free automation review.">
-<link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="favicon.png"><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet"><script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI & Workflow Automation | Anya Lazarenko</title>
+<meta name="description" content="AI and workflow automation for small businesses: leads, follow-ups, onboarding, reporting, and repetitive operations. Get a free automation review.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}:root{--bg:#f7f6f2;--card:#fff;--ink:#171717;--muted:#66645f;--line:#e5e2dc;--accent:#4f46e5;--lav:#f1f0ff}html{scroll-behavior:smooth}body{background-color:var(--bg);background-image:linear-gradient(rgba(110,105,95,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(110,105,95,.035) 1px,transparent 1px),radial-gradient(circle,rgba(110,105,95,.11) .8px,transparent 1px);background-size:112px 112px,112px 112px,112px 112px;background-position:-1px -1px,-1px -1px,-1px -1px;color:var(--ink);font-family:Archivo,sans-serif;font-weight:300;line-height:1.65}a{color:inherit}.wrap{max-width:1160px;margin:auto}nav{position:sticky;top:0;z-index:10;background:rgba(247,246,242,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:1rem 4rem;display:flex;justify-content:space-between}.logo{font:600 1.35rem "Source Serif 4",serif;text-decoration:none}.nav{display:flex;gap:1.6rem;list-style:none}.nav a{text-decoration:none;color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}section{padding:3.6rem 4rem}.eyebrow{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:1.2rem}.hero{min-height:auto;display:block;padding-top:4.2rem;padding-bottom:4rem}.hero h1,h2{font-family:"Source Serif 4",serif;letter-spacing:-.045em;line-height:1.02}.hero h1{font-size:clamp(3.3rem,6.8vw,6.2rem);max-width:920px}.hero p{color:var(--muted);font-size:1.1rem;max-width:640px;margin:1.7rem 0 2rem}.hero img{width:100%;max-height:610px;object-fit:cover}.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;padding:.9rem 1.3rem;font-weight:500;font-size:.88rem}.note{font-size:.78rem!important;margin-top:.9rem!important}.section-head{margin-bottom:2rem}.section-head h2{font-size:clamp(2.7rem,5vw,4.6rem);max-width:800px}.section-head p{color:var(--muted);max-width:650px;margin-top:1rem}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.card{background:var(--card);padding:2.3rem}.card h3{font:600 1.35rem "Source Serif 4",serif;margin-bottom:.65rem}.card p{color:var(--muted);font-size:.92rem}.process{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.step{background:var(--bg);padding:2rem}.num{color:var(--accent);font-weight:600;margin-bottom:1.5rem}.step h3{font:600 1.2rem "Source Serif 4",serif}.step p{color:var(--muted);font-size:.88rem;margin-top:.5rem}.why{background:var(--lav)}.why h2{font-size:clamp(2.7rem,5vw,4.6rem);max-width:780px}.why p{color:var(--muted);max-width:780px;margin-top:1.3rem;font-size:1.03rem}.tools{margin-top:1.5rem;color:var(--muted);font-size:.82rem}.cta{background:#171717;color:#fff;text-align:center}.cta h2{font-size:clamp(3rem,6vw,5.5rem)}.cta p{color:#aaa8a2;max-width:650px;margin:1rem auto 2rem}.cta .btn{background:#fff;color:#171717}footer{padding:2rem 4rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font-size:.8rem}
-@media(max-width:800px){nav{padding:1rem 1.3rem}.nav{display:none}section{padding:4rem 1.3rem}.hero{grid-template-columns:1fr;min-height:auto;gap:2rem}.grid,.process{grid-template-columns:1fr}.hero img{max-height:500px}footer{padding:1.5rem;display:block}footer span{display:block;margin:.3rem 0}}
-.review-form{max-width:760px;margin:2.5rem auto 0;text-align:left;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.review-form label{display:flex;flex-direction:column;gap:.35rem;font-size:.85rem;font-weight:500}.review-form .wide,.review-form .form-actions{grid-column:1/-1}.review-form input,.review-form textarea{width:100%;border:1px solid #777;border-radius:3px;background:#fff;color:#171717;padding:.8rem;font:400 1rem Archivo,sans-serif}.review-form textarea{min-height:105px;resize:vertical}.review-form input:focus-visible,.review-form textarea:focus-visible{outline:3px solid #a9a4ff;outline-offset:2px}.review-form .btn{border:0;cursor:pointer}.review-form .btn:disabled{opacity:.6;cursor:wait}.form-status{margin:.8rem 0 0!important;color:#fff!important;min-height:1.5em}.form-status.error{color:#ffb4ad!important}.form-status.success{color:#b7f1c6!important}.form-honeypot{position:absolute;left:-9999px}@media(max-width:800px){.review-form{grid-template-columns:1fr}}
-</style></head><body>
-<nav><a class="logo" href="index.html">Anya Lazarenko</a><ul class="nav"><li><a href="#automate">What I automate</a></li><li><a href="#process">How it works</a></li><li><a href="#why">Why me</a></li></ul></nav>
-<section class="hero wrap"><div><div class="eyebrow">AI + Workflow Automation</div><h1>I automate your leads, follow-ups, and busywork.</h1><p>Turn repetitive work into workflows that run automatically — from lead capture and client onboarding to reporting and follow-ups.</p><a class="btn" href="#free-review">Get a free review →</a><p class="note">No commitment. Tell me what's taking your time and I'll identify what can realistically be automated.</p></div></section>
-<section id="automate"><div class="wrap"><div class="section-head"><div class="eyebrow">What I automate</div><h2>Start with the work you repeat.</h2><p>I focus on practical systems that remove manual handoffs and repetitive admin — not automation for automation's sake.</p></div><div class="grid"><div class="card"><h3>Leads & follow-ups</h3><p>Connect forms, inquiries, DMs, and calls to your CRM and trigger timely follow-up automatically.</p></div><div class="card"><h3>Client onboarding</h3><p>Turn welcome emails, document requests, task creation, and notifications into one reliable sequence.</p></div><div class="card"><h3>Reporting</h3><p>Move data into the right place, summarize it, and deliver recurring reports without weekly copy-paste.</p></div><div class="card"><h3>Operations</h3><p>Connect the tools you already use so repetitive data entry and routine admin happen automatically.</p></div></div></div></section>
-<section id="process"><div class="wrap"><div class="section-head"><div class="eyebrow">How it works</div><h2>Simple from review to handoff.</h2></div><div class="process"><div class="step"><div class="num">01</div><h3>Free review</h3><p>You show me what's repetitive and where work gets stuck.</p></div><div class="step"><div class="num">02</div><h3>Automation plan</h3><p>I identify what is worth automating and what should stay human.</p></div><div class="step"><div class="num">03</div><h3>Build</h3><p>I connect the tools and build the workflow around your real process.</p></div><div class="step"><div class="num">04</div><h3>Handoff</h3><p>You get a working system and a clear understanding of how it runs.</p></div></div></div></section>
-<section id="why" class="why"><div class="wrap"><div class="eyebrow">Why me</div><h2>Technical experience, not just automation tools.</h2><p>I spent 9 years at Snap working across complex technical products, launches, and operational systems. Since then, I've been building my own AI agents, AI-powered products, and workflow automations — from project-management agents to systems that connect AI with everyday business processes.</p><p>I bring the same approach to client work: understand the process first, then build the simplest automation that actually solves it.</p><div class="tools">Built with n8n, Make, APIs, AI, and the tools your business already uses.</div></div></section>
-<section class="cta" id="free-review"><div class="wrap"><div class="eyebrow">Free review</div><h2>What is eating your time?</h2><p>Tell me what you're doing manually. I'll tell you whether it's worth automating and what a practical first version could look like.</p><form class="review-form" id="review-form"><label>Name *<input name="name" autocomplete="name" maxlength="120" required></label><label>Email *<input name="email" type="email" autocomplete="email" maxlength="254" required></label><label>Business name *<input name="businessName" maxlength="150" required></label><label>Website<input name="website" type="url" placeholder="https://example.com" maxlength="500"></label><label class="wide">What does your business do? *<textarea name="businessDescription" maxlength="2000" required></textarea></label><label class="wide">What would you like to automate? *<textarea name="automationRequest" maxlength="3000" required></textarea></label><label>Tools you currently use<input name="tools" maxlength="500"></label><label>Phone (optional)<input name="phone" type="tel" autocomplete="tel" maxlength="50"></label><label class="form-honeypot" aria-hidden="true">Leave this blank<input name="companyWebsite" tabindex="-1" autocomplete="off"></label><div class="form-actions"><div class="cf-turnstile" data-sitekey="0x4AAAAAAE_iDpi6MqyoBjqm" data-theme="dark"></div><small>By sending this request, you agree to be contacted about your Free Review. <a href="privacy.html">Privacy details</a>.</small><br><button class="btn" type="submit">Send my request →</button><p class="form-status" id="form-status" role="status" aria-live="polite"></p></div></form></div></section>
-<footer><span>Anya Lazarenko</span><span><a href="index.html">Main site</a> · <a href="privacy.html">Privacy</a></span></footer>
+:root{
+  --bg:#FDFEFE; --card:#FFFFFF; --ink:#22333B; --muted:#5B6E79; --faint:#93A5B1;
+  --line:#E4EBF1; --mint:#7FC4B2; --ice:#A9CCE3; --slate:#5B7FA6; --rose:#D9A0AC;
+  --berry:#8E3A5C; --signal:#5B7FA6;
+  --grad:linear-gradient(110deg,#7FC4B2 0%,#A9CCE3 30%,#5B7FA6 60%,#D9A0AC 100%);
+  --shadow:0 18px 44px rgba(34,51,59,.08); --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{background:var(--bg);color:var(--ink);font-family:"Manrope",-apple-system,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.625;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--ice);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+
+/* topbar */
+.topbar{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(253,254,254,.86);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1440px;margin:0 auto;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:baseline;gap:14px;white-space:nowrap}
+.brand-name{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.14em}
+.brand-role{font-size:12px;font-weight:600;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.topnav{display:flex;align-items:center;gap:28px}
+.topnav a.navlink{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;color:var(--faint);transition:color .25s}
+.topnav a.navlink:hover{color:var(--ink)}
+
+/* sections */
+section{padding:104px 0}
+.sec-label{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.18em;color:var(--faint);
+  text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:16px}
+.sec-label::after{content:"";height:2px;width:52px;background:var(--signal);border-radius:2px}
+h1{font-weight:800;font-size:clamp(48px,6vw,84px);line-height:1.05;letter-spacing:-.04em;margin-bottom:28px;max-width:16ch}
+h2{font-weight:700;font-size:clamp(34px,4.4vw,62px);line-height:1.08;letter-spacing:-.03em;margin-bottom:20px}
+.lead{color:var(--muted);font-size:17px;max-width:640px;margin-bottom:36px}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;line-height:1.4;
+  padding:15px 28px;border-radius:6px;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;border:1px solid transparent}
+.btn-primary{background:var(--ink);color:#FDFEFE}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn-sm{padding:10px 20px;font-size:13px;white-space:nowrap}
+.btn-light{background:#FDFEFE;color:var(--ink)}
+.btn-light:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+
+/* hero */
+.hero{padding-top:168px;position:relative}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(169,204,227,.35) 1.1px,transparent 1.1px);
+  background-size:26px 26px;
+  -webkit-mask-image:linear-gradient(115deg,#000 0%,transparent 55%);
+  mask-image:linear-gradient(115deg,#000 0%,transparent 55%);opacity:.5}
+.hero-inner{position:relative}
+.note{margin-top:18px;color:var(--faint);font-size:14px;max-width:520px}
+
+/* cards */
+.svc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:48px}
+.svc-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:36px 32px;box-shadow:0 8px 28px rgba(34,51,59,.05);transition:transform .25s ease,box-shadow .25s ease}
+.svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.svc-card h3{font-size:22px;font-weight:700;letter-spacing:-.01em;margin-bottom:12px}
+.svc-card p{color:var(--muted);font-size:15px}
+.svc-icon{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-size:22px;color:#fff;
+  background:linear-gradient(135deg,var(--ice),var(--mint));margin-bottom:20px}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:48px}
+.step{border-top:2px solid var(--line);padding-top:24px}
+.step-num{font-weight:800;font-size:40px;letter-spacing:-.03em;background:var(--grad);
+  -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:12px}
+.step h3{font-size:19px;font-weight:700;margin-bottom:8px}
+.step p{color:var(--muted);font-size:14.5px}
+
+/* why */
+.why{background:linear-gradient(180deg,#F2F7FA 0%,var(--bg) 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why p.body{color:var(--muted);font-size:17px;max-width:720px;margin-bottom:18px}
+.tag-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink);border:1px solid var(--line);
+  border-radius:20px;padding:8px 18px;background:var(--card)}
+
+/* cta + form (dark) */
+.cta{background:var(--ink);color:#FDFEFE;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(circle,rgba(169,204,227,.14) 1.1px,transparent 1.1px);background-size:26px 26px;
+  -webkit-mask-image:linear-gradient(115deg,#000 0%,transparent 60%);mask-image:linear-gradient(115deg,#000 0%,transparent 60%)}
+.cta .sec-label{color:#9DB2BE}
+.cta .lead{color:#B9C9D3}
+.cta-inner{position:relative}
+.review-form{max-width:780px;margin:48px auto 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;text-align:left}
+.review-form label{display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:#DCE7ED}
+.review-form .wide,.review-form .form-actions{grid-column:1/-1}
+.review-form input,.review-form textarea{width:100%;border:1px solid #3D4F5A;border-radius:8px;
+  background:rgba(255,255,255,.05);color:#FDFEFE;padding:14px 16px;font:400 15px "Manrope",sans-serif;
+  transition:border-color .2s ease}
+.review-form input::placeholder,.review-form textarea::placeholder{color:#7E93A0}
+.review-form input:focus,.review-form textarea:focus{outline:none;border-color:var(--ice)}
+.review-form textarea{min-height:110px;resize:vertical}
+.form-actions small{display:block;color:#9DB2BE;font-size:12.5px;margin:14px 0}
+.form-actions small a{color:var(--ice);text-decoration:underline;text-underline-offset:3px}
+.form-status{margin:14px 0 0;min-height:1.5em;font-size:14px;color:#DCE7ED}
+.form-status.error{color:#F2A9A9}
+.form-status.success{color:#9FE3C0}
+.form-honeypot{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:32px 0 40px}
+.foot-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.foot-inner .mono{font-size:12px;letter-spacing:.06em;color:var(--muted)}
+.foot-links{font-size:13px;color:var(--muted);display:flex;gap:20px}
+.foot-links a:hover{color:var(--ink)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  h1{font-size:44px}.wrap{padding:0 20px}.topbar-inner{padding:0 20px}
+  .topnav a.navlink{display:none}
+  .hero{padding-top:128px}section{padding:72px 0}
+  .svc-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}
+  .review-form{grid-template-columns:1fr}
+}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html" aria-label="Anya Lazarenko — main site">
+      <span class="brand-name">ANYA LAZARENKO</span>
+      <span class="brand-role">AI &amp; Automation</span>
+    </a>
+    <nav class="topnav" aria-label="Page sections">
+      <a class="navlink" href="#automate">01&nbsp;&nbsp;AUTOMATE</a>
+      <a class="navlink" href="#process">02&nbsp;&nbsp;PROCESS</a>
+      <a class="navlink" href="#why">03&nbsp;&nbsp;WHY ME</a>
+      <a class="btn btn-primary btn-sm" href="#free-review">Free review</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="sec-label">AI + Workflow Automation</p>
+      <h1 class="reveal in">I automate your <span class="grad-text">leads, follow-ups,</span> and busywork.</h1>
+      <p class="lead reveal in">Turn repetitive work into workflows that run automatically — from lead capture and client onboarding to reporting and follow-ups.</p>
+      <div class="reveal in"><a class="btn btn-primary" href="#free-review">Get a free review <span aria-hidden="true">&rarr;</span></a></div>
+      <p class="note reveal in">No commitment. Tell me what's taking your time and I'll identify what can realistically be automated.</p>
+    </div>
+  </section>
+
+  <!-- WHAT I AUTOMATE -->
+  <section id="automate">
+    <div class="wrap">
+      <p class="sec-label">What I automate</p>
+      <h2 class="reveal">Start with the work you repeat.</h2>
+      <p class="lead reveal">I focus on practical systems that remove manual handoffs and repetitive admin — not automation for automation's sake.</p>
+      <div class="svc-grid">
+        <article class="svc-card reveal">
+          <div class="svc-icon" aria-hidden="true">◈</div>
+          <h3>Leads &amp; follow-ups</h3>
+          <p>Connect forms, inquiries, DMs, and calls to your CRM and trigger timely follow-up automatically.</p>
+        </article>
+        <article class="svc-card reveal">
+          <div class="svc-icon" aria-hidden="true">✦</div>
+          <h3>Client onboarding</h3>
+          <p>Turn welcome emails, document requests, task creation, and notifications into one reliable sequence.</p>
+        </article>
+        <article class="svc-card reveal">
+          <div class="svc-icon" aria-hidden="true">▣</div>
+          <h3>Reporting</h3>
+          <p>Move data into the right place, summarize it, and deliver recurring reports without weekly copy-paste.</p>
+        </article>
+        <article class="svc-card reveal">
+          <div class="svc-icon" aria-hidden="true">⬡</div>
+          <h3>Operations</h3>
+          <p>Connect the tools you already use so repetitive data entry and routine admin happen automatically.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <p class="sec-label">How it works</p>
+      <h2 class="reveal">Simple from review to handoff.</h2>
+      <div class="steps">
+        <div class="step reveal"><div class="step-num">01</div><h3>Free review</h3><p>You show me what's repetitive and where work gets stuck.</p></div>
+        <div class="step reveal"><div class="step-num">02</div><h3>Automation plan</h3><p>I identify what is worth automating and what should stay human.</p></div>
+        <div class="step reveal"><div class="step-num">03</div><h3>Build</h3><p>I connect the tools and build the workflow around your real process.</p></div>
+        <div class="step reveal"><div class="step-num">04</div><h3>Handoff</h3><p>You get a working system and a clear understanding of how it runs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ME -->
+  <section class="why" id="why">
+    <div class="wrap">
+      <p class="sec-label">Why me</p>
+      <h2 class="reveal">Technical experience, <span class="grad-text">not just automation tools.</span></h2>
+      <p class="body reveal">I spent 9 years at Snap working across complex technical products, launches, and operational systems. Since then, I've been building my own AI agents, AI-powered products, and workflow automations — from project-management agents to systems that connect AI with everyday business processes.</p>
+      <p class="body reveal">I bring the same approach to client work: understand the process first, then build the simplest automation that actually solves it.</p>
+      <div class="tag-row reveal">
+        <span class="tag">n8n</span><span class="tag">Make</span><span class="tag">APIs</span><span class="tag">AI agents</span>
+        <span class="tag">+ the tools your business already uses</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE REVIEW -->
+  <section class="cta" id="free-review">
+    <div class="wrap cta-inner">
+      <p class="sec-label">Free review</p>
+      <h2 class="reveal">What is eating your time?</h2>
+      <p class="lead reveal">Tell me what you're doing manually. I'll tell you whether it's worth automating and what a practical first version could look like.</p>
+      <form class="review-form reveal" id="review-form">
+        <label>Name *<input name="name" autocomplete="name" maxlength="120" required></label>
+        <label>Email *<input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+        <label>Business name *<input name="businessName" maxlength="150" required></label>
+        <label>Website<input name="website" type="url" placeholder="https://example.com" maxlength="500"></label>
+        <label class="wide">What does your business do? *<textarea name="businessDescription" maxlength="2000" required></textarea></label>
+        <label class="wide">What would you like to automate? *<textarea name="automationRequest" maxlength="3000" required></textarea></label>
+        <label>Tools you currently use<input name="tools" maxlength="500"></label>
+        <label>Phone (optional)<input name="phone" type="tel" autocomplete="tel" maxlength="50"></label>
+        <label class="form-honeypot" aria-hidden="true">Leave this blank<input name="companyWebsite" tabindex="-1" autocomplete="off"></label>
+        <div class="form-actions">
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAE_iDpi6MqyoBjqm" data-theme="dark"></div>
+          <small>By sending this request, you agree to be contacted about your Free Review. <a href="privacy.html">Privacy details</a>.</small>
+          <button class="btn btn-light" type="submit">Send my request <span aria-hidden="true">&rarr;</span></button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span class="mono">Anya Lazarenko</span>
+    <span class="foot-links"><a href="index.html">Main site</a><a href="privacy.html">Privacy</a></span>
+  </div>
+</footer>
+
 <script>
-const form = document.getElementById('review-form');
-const status = document.getElementById('form-status');
-form.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  if (!form.reportValidity()) return;
-  const fields = Object.fromEntries(new FormData(form));
-  if (!fields['cf-turnstile-response']) {
-    status.className = 'form-status error';
-    status.textContent = 'Please complete the security check before sending.';
-    return;
+(function(){
+  "use strict";
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* reveal on scroll */
+  var els = document.querySelectorAll(".reveal:not(.in)");
+  if("IntersectionObserver" in window && !reduceMotion){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add("in"); obs.unobserve(e.target); }
+      });
+    }, {threshold:.12});
+    els.forEach(function(el){ obs.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add("in"); });
   }
-  const button = form.querySelector('button[type="submit"]');
-  status.textContent = 'Sending your request…';
-  status.className = 'form-status';
-  button.disabled = true;
-  try {
-    const response = await fetch('/api/free-review', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(fields),
+
+  /* free review form — posts to the existing /api/free-review endpoint */
+  var form = document.getElementById("review-form");
+  var status = document.getElementById("form-status");
+  form.addEventListener("submit", function(event){
+    event.preventDefault();
+    if(!form.reportValidity()) return;
+    var fields = Object.fromEntries(new FormData(form));
+    if(!fields["cf-turnstile-response"]){
+      status.className = "form-status error";
+      status.textContent = "Please complete the security check before sending.";
+      return;
+    }
+    var button = form.querySelector('button[type="submit"]');
+    status.textContent = "Sending your request…";
+    status.className = "form-status";
+    button.disabled = true;
+    fetch("/api/free-review", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(fields)
+    }).then(function(response){
+      if(!response.ok) throw new Error("Request failed");
+      form.reset();
+      if(window.turnstile) window.turnstile.reset();
+      status.className = "form-status success";
+      status.textContent = "Thank you! Your request was sent. Please check your email for confirmation.";
+    }).catch(function(){
+      if(window.turnstile) window.turnstile.reset();
+      status.className = "form-status error";
+      status.textContent = "Your request could not be sent. Please try again in a moment.";
+    }).finally(function(){
+      button.disabled = false;
     });
-    if (!response.ok) throw new Error('Request failed');
-    form.reset();
-    window.turnstile?.reset();
-    status.className = 'form-status success';
-    status.textContent = 'Thank you! Your request was sent. Please check your email for confirmation.';
-  } catch {
-    window.turnstile?.reset();
-    status.className = 'form-status error';
-    status.textContent = 'Your request could not be sent. Please try again in a moment.';
-  } finally {
-    button.disabled = false;
-  }
-});
+  });
+})();
 </script>
-</body></html>
+</body>
+</html>
