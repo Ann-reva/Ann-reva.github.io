@@ -237,19 +237,19 @@ h2{
 }
 .flow-center .spark{color:var(--slate)}
 
-/* flashcard visual */
-.flash-stack{position:relative;width:230px;height:190px}
-.flash-back,.flash-front{
-  position:absolute;border-radius:12px;border:1px solid var(--line);
-  box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;
-  font-weight:700;font-size:26px;letter-spacing:-.02em;
+/* LexiQ visual: "Learn. Remember." panel + steps, per designer mockup */
+.lexiq-visual{display:flex;gap:28px;align-items:stretch;width:100%;flex-wrap:wrap}
+.learn-panel{
+  flex:1 1 180px;display:flex;flex-direction:column;justify-content:center;gap:4px;
+  border:1px solid var(--line);border-radius:14px;background:var(--card);
+  box-shadow:var(--shadow);padding:32px 28px;
+  font-weight:700;font-size:30px;letter-spacing:-.02em;line-height:1.25;color:var(--ink);
 }
-.flash-back{
-  inset:0 0 24px 24px;background:linear-gradient(135deg,var(--ice),var(--mint));
-  transform:rotate(5deg);color:#fff;
-}
-.flash-front{inset:24px 24px 0 0;background:var(--card);color:var(--ink);flex-direction:column;gap:2px}
-.flash-front small{font-family:"IBM Plex Mono",monospace;font-weight:400;font-size:10px;letter-spacing:.14em;color:var(--faint)}
+.lexiq-visual .steps-stack{flex:2 1 260px;min-width:0;width:auto;margin:0;padding:20px 8px 30px}
+.lexiq-visual .steps-card{min-height:0;padding:20px 22px;gap:16px}
+.lexiq-visual .steps-card + .steps-card{margin-top:-12px}
+.lexiq-visual .steps-number{width:32px;height:32px;font-size:14px}
+.lexiq-visual .steps-text{font-size:19px;line-height:1.35}
 </style>
 <style>
 /* ============ STEPS STACK (LexiQ) ============ */
@@ -388,8 +388,11 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
   .stat-num{font-size:38px}
   .work-grid{grid-template-columns:1fr}
   .builds-grid{grid-template-columns:1fr}
-  .cap-grid{grid-template-columns:1fr}
-  .cap-card{padding:24px 20px}
+  .cap-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cap-card{padding:20px 14px}
+  .cap-num{margin-bottom:12px;font-size:10px}
+  .cap-card h3{font-size:16px;margin-bottom:10px;overflow-wrap:anywhere}
+  .cap-card p{font-size:12px;line-height:1.6;overflow-wrap:anywhere}
   .svc-row{grid-template-columns:40px 1fr 40px;grid-template-areas:"num name arrow" "num desc arrow"}
   .svc-num{grid-area:num}.svc-name{grid-area:name}.svc-desc{grid-area:desc}.svc-arrow{grid-area:arrow}
   .creds{grid-template-columns:1fr}
@@ -543,11 +546,8 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
         <!-- LexiQ -->
         <article class="work-card reveal">
           <div class="work-visual" aria-hidden="true">
-            <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:center;width:100%">
-              <div class="flash-stack">
-                <div class="flash-back">Aa</div>
-                <div class="flash-front"><small>FLASHCARD</small><span>Learn.</span><span>Remember.</span></div>
-              </div>
+            <div class="lexiq-visual">
+              <div class="learn-panel"><span>Learn.</span><span>Remember.</span></div>
               <div class="steps-stack">
                 <div class="steps-card">
                   <span class="steps-border" aria-hidden="true"></span>
