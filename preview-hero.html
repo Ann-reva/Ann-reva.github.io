@@ -92,6 +92,21 @@ img,svg{display:block;max-width:100%}
 .sidenav a.active::after{background:var(--mint)}
 main{padding-right:196px}
 
+/* ============ AURORA (northern-lights wash, brand colors) ============ */
+.aurora{position:fixed;inset:-30% 0;z-index:0;pointer-events:none;overflow:hidden}
+.aurora-inner{position:absolute;inset:0;will-change:transform}
+.aurora-inner span{position:absolute;border-radius:50%;will-change:transform}
+.aurora .a1{width:58vw;height:58vw;left:-14vw;top:-14vw;background:radial-gradient(circle,rgba(169,204,227,.5) 0%,rgba(169,204,227,0) 68%);animation:drift1 26s ease-in-out infinite alternate}
+.aurora .a2{width:46vw;height:46vw;right:-12vw;top:24%;background:radial-gradient(circle,rgba(127,196,178,.4) 0%,rgba(127,196,178,0) 68%);animation:drift2 32s ease-in-out infinite alternate}
+.aurora .a3{width:52vw;height:52vw;left:6vw;top:60%;background:radial-gradient(circle,rgba(217,160,172,.36) 0%,rgba(217,160,172,0) 68%);animation:drift3 29s ease-in-out infinite alternate}
+.aurora .a4{width:42vw;height:42vw;right:2vw;top:90%;background:radial-gradient(circle,rgba(91,127,166,.32) 0%,rgba(91,127,166,0) 68%);animation:drift4 35s ease-in-out infinite alternate}
+@keyframes drift1{from{transform:translate(0,0) scale(1)}to{transform:translate(6vw,4vh) scale(1.12)}}
+@keyframes drift2{from{transform:translate(0,0) scale(1.08)}to{transform:translate(-5vw,6vh) scale(1)}}
+@keyframes drift3{from{transform:translate(0,0) scale(1)}to{transform:translate(5vw,-5vh) scale(1.1)}}
+@keyframes drift4{from{transform:translate(0,0) scale(1.05)}to{transform:translate(-6vw,-4vh) scale(1)}}
+@media (prefers-reduced-motion:reduce){.aurora-inner span{animation:none}}
+main,footer{position:relative;z-index:1}
+
 /* ============ SECTIONS ============ */
 section{padding:104px 0}
 .sec-label{
@@ -327,6 +342,8 @@ h2{
   transition:background .25s ease;
 }
 .svc-row:hover{background:#F4F8FB}
+a.svc-row{color:inherit;text-decoration:none}
+a.svc-row:visited{color:inherit}
 .svc-num{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--faint)}
 .svc-name{font-weight:700;font-size:22px;letter-spacing:-.01em}
 .svc-desc{color:var(--muted);font-size:17px}
@@ -414,6 +431,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
 </style>
 </head>
 <body>
+<div class="aurora" aria-hidden="true"><div class="aurora-inner"><span class="a1"></span><span class="a2"></span><span class="a3"></span><span class="a4"></span></div></div>
 
 <header class="topbar">
   <div class="topbar-inner">
@@ -633,30 +651,30 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
     <div class="wrap">
       <p class="sec-label">04&nbsp;&nbsp;/&nbsp;&nbsp;Services</p>
       <div class="svc-list reveal">
-        <div class="svc-row">
+        <a class="svc-row" href="#contact" aria-label="Launch Readiness — get in touch">
           <span class="svc-num">01</span>
           <span class="svc-name">Launch Readiness</span>
           <span class="svc-desc">Release governance, risk and dependency management.</span>
           <span class="svc-arrow" aria-hidden="true">&rarr;</span>
-        </div>
-        <div class="svc-row">
+        </a>
+        <a class="svc-row" href="#contact" aria-label="Release Process — get in touch">
           <span class="svc-num">02</span>
           <span class="svc-name">Release Process</span>
           <span class="svc-desc">Make complex cross-functional delivery repeatable and visible.</span>
           <span class="svc-arrow" aria-hidden="true">&rarr;</span>
-        </div>
-        <div class="svc-row">
+        </a>
+        <a class="svc-row" href="#contact" aria-label="Fractional TPM — get in touch">
           <span class="svc-num">03</span>
           <span class="svc-name">Fractional TPM</span>
           <span class="svc-desc">Technical program leadership without a full-time hire.</span>
           <span class="svc-arrow" aria-hidden="true">&rarr;</span>
-        </div>
-        <div class="svc-row">
+        </a>
+        <a class="svc-row" href="#contact" aria-label="Metrics & Reporting — get in touch">
           <span class="svc-num">04</span>
           <span class="svc-name">Metrics &amp; Reporting</span>
           <span class="svc-desc">Turn delivery data into decisions leadership can use.</span>
           <span class="svc-arrow" aria-hidden="true">&rarr;</span>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -758,6 +776,20 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
     window.addEventListener("scroll", requestNavUpdate, {passive:true});
     window.addEventListener("resize", requestNavUpdate);
     updateNav();
+  }
+
+  /* ---------- Aurora scroll parallax ---------- */
+  var auroraInner = document.querySelector(".aurora-inner");
+  if(auroraInner && !reduceMotion){
+    var aurTicking = false;
+    function auroraParallax(){
+      aurTicking = false;
+      var shift = Math.min(window.scrollY * 0.08, 220);
+      auroraInner.style.transform = "translate3d(0," + (-shift) + "px,0)";
+    }
+    window.addEventListener("scroll", function(){
+      if(!aurTicking){ aurTicking = true; requestAnimationFrame(auroraParallax); }
+    }, {passive:true});
   }
 
   /* ---------- Reveal on scroll ---------- */
