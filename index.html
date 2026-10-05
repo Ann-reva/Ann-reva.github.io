@@ -92,22 +92,26 @@ img,svg{display:block;max-width:100%}
 .sidenav a.active::after{background:var(--mint)}
 main{padding-right:212px}
 
-/* ============ AURORA (northern-lights wash, brand colors) ============ */
-.aurora{position:fixed;inset:-30% 0;z-index:0;pointer-events:none;overflow:hidden}
-.aurora-inner{position:absolute;inset:0;will-change:transform}
-.aurora-inner span{position:absolute;border-radius:50%;will-change:transform}
-.aurora .a1{width:58vw;height:58vw;left:-14vw;top:-14vw;background:radial-gradient(circle,rgba(169,204,227,.5) 0%,rgba(169,204,227,0) 68%);animation:drift1 26s ease-in-out infinite alternate}
-.aurora .a2{width:46vw;height:46vw;right:-12vw;top:24%;background:radial-gradient(circle,rgba(127,196,178,.4) 0%,rgba(127,196,178,0) 68%);animation:drift2 32s ease-in-out infinite alternate}
-.aurora .a3{width:52vw;height:52vw;left:6vw;top:60%;background:radial-gradient(circle,rgba(217,160,172,.36) 0%,rgba(217,160,172,0) 68%);animation:drift3 29s ease-in-out infinite alternate}
-.aurora .a4{width:42vw;height:42vw;right:2vw;top:90%;background:radial-gradient(circle,rgba(91,127,166,.32) 0%,rgba(91,127,166,0) 68%);animation:drift4 35s ease-in-out infinite alternate}
+/* ============ AURORA: one continuous northern-lights canvas ============ */
+body{position:relative}
+.aurora{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.ab{position:absolute;left:0;width:100%;transform:translate3d(0,var(--ay,0px),0);will-change:transform}
+.ab i{display:block;border-radius:50%;will-change:transform}
+.a1{top:-3%}.a1 i{width:60vw;height:60vw;margin-left:-14vw;background:radial-gradient(circle,rgba(169,204,227,.5) 0%,rgba(169,204,227,0) 68%);animation:drift1 26s ease-in-out infinite alternate}
+.a2{top:19%}.a2 i{width:52vw;height:52vw;margin-left:56vw;background:radial-gradient(circle,rgba(127,196,178,.42) 0%,rgba(127,196,178,0) 68%);animation:drift2 32s ease-in-out infinite alternate}
+.a3{top:41%}.a3 i{width:58vw;height:58vw;margin-left:6vw;background:radial-gradient(circle,rgba(217,160,172,.38) 0%,rgba(217,160,172,0) 68%);animation:drift3 29s ease-in-out infinite alternate}
+.a4{top:63%}.a4 i{width:50vw;height:50vw;margin-left:54vw;background:radial-gradient(circle,rgba(91,127,166,.34) 0%,rgba(91,127,166,0) 68%);animation:drift4 35s ease-in-out infinite alternate}
+.a5{top:85%}.a5 i{width:56vw;height:56vw;margin-left:-10vw;background:radial-gradient(circle,rgba(169,204,227,.44) 0%,rgba(169,204,227,0) 68%);animation:drift5 30s ease-in-out infinite alternate}
 @keyframes drift1{from{transform:translate(0,0) scale(1)}to{transform:translate(6vw,4vh) scale(1.12)}}
 @keyframes drift2{from{transform:translate(0,0) scale(1.08)}to{transform:translate(-5vw,6vh) scale(1)}}
 @keyframes drift3{from{transform:translate(0,0) scale(1)}to{transform:translate(5vw,-5vh) scale(1.1)}}
 @keyframes drift4{from{transform:translate(0,0) scale(1.05)}to{transform:translate(-6vw,-4vh) scale(1)}}
-@media (prefers-reduced-motion:reduce){.aurora-inner span{animation:none}}
+@keyframes drift5{from{transform:translate(0,0) scale(1.1)}to{transform:translate(5vw,5vh) scale(1)}}
+@media (prefers-reduced-motion:reduce){.ab i{animation:none}}
 main,footer{position:relative;z-index:1}
 
 /* ============ SECTIONS ============ */
+#contact{min-height:calc(100vh - 64px);min-height:calc(100svh - 64px);display:flex;flex-direction:column;justify-content:center}
 section{padding:104px 0}
 .sec-label{
   font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.18em;
@@ -351,7 +355,7 @@ a.svc-row:visited{color:inherit}
 .svc-row:hover .svc-arrow{transform:translateX(8px);color:var(--slate)}
 
 /* ============ AUTOMATION ============ */
-.automation{background:linear-gradient(180deg,#F4F9F7 0%,var(--bg) 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.automation{background:linear-gradient(180deg,rgba(244,249,247,.7) 0%,rgba(253,254,254,.7) 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .creds{
   display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px;
   border:1px solid var(--line);border-radius:var(--radius);background:var(--card);
@@ -431,7 +435,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
 </style>
 </head>
 <body>
-<div class="aurora" aria-hidden="true"><div class="aurora-inner"><span class="a1"></span><span class="a2"></span><span class="a3"></span><span class="a4"></span></div></div>
+<div class="aurora" aria-hidden="true"><div class="aurora-inner"><span class="ab a1"><i></i></span><span class="ab a2"><i></i></span><span class="ab a3"><i></i></span><span class="ab a4"><i></i></span><span class="ab a5"><i></i></span></div></div>
 
 <header class="topbar">
   <div class="topbar-inner">
@@ -791,7 +795,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
         var el = document.getElementById(id);
         if(el && el.getBoundingClientRect().top + window.scrollY <= line) current = id;
       });
-      if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60){
+      if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 120){
         current = secIds[secIds.length - 1];
       }
       setActive(current);
@@ -804,18 +808,24 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
     updateNav();
   }
 
-  /* ---------- Aurora scroll parallax ---------- */
-  var auroraInner = document.querySelector(".aurora-inner");
-  if(auroraInner && !reduceMotion){
-    var aurTicking = false;
-    function auroraParallax(){
-      aurTicking = false;
-      var shift = Math.min(window.scrollY * 0.08, 220);
-      auroraInner.style.transform = "translate3d(0," + (-shift) + "px,0)";
+  /* ---------- Aurora: scroll drives the lights ---------- */
+  var aurBlobs = Array.prototype.slice.call(document.querySelectorAll(".aurora .ab"));
+  var aurRanges = [-340, 300, -420, 340, -300];
+  if(aurBlobs.length && !reduceMotion){
+    var aurTick = false;
+    function auroraScroll(){
+      aurTick = false;
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var pr = max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
+      aurBlobs.forEach(function(b, i){
+        b.style.setProperty("--ay", ((pr - 0.5) * aurRanges[i]).toFixed(1) + "px");
+      });
     }
     window.addEventListener("scroll", function(){
-      if(!aurTicking){ aurTicking = true; requestAnimationFrame(auroraParallax); }
+      if(!aurTick){ aurTick = true; requestAnimationFrame(auroraScroll); }
     }, {passive:true});
+    window.addEventListener("resize", auroraScroll);
+    auroraScroll();
   }
 
   /* ---------- Reveal on scroll ---------- */
