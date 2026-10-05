@@ -69,7 +69,7 @@ img,svg{display:block;max-width:100%}
 
 /* ============ SIDE NAV ============ */
 .sidenav{
-  position:fixed;top:64px;right:0;bottom:0;z-index:40;width:172px;
+  position:fixed;top:64px;right:0;bottom:0;z-index:40;width:196px;
   border-left:1px solid var(--line);
   background:rgba(253,254,254,.7);
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
@@ -77,8 +77,8 @@ img,svg{display:block;max-width:100%}
 }
 .sidenav a{
   display:flex;align-items:center;gap:12px;white-space:nowrap;
-  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.12em;
-  color:var(--faint);padding:10px 0;position:relative;
+  font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.1em;
+  color:var(--faint);padding:11px 0;position:relative;
   transition:color .25s ease;
 }
 .sidenav a .n{color:var(--faint);transition:color .25s ease}
@@ -90,7 +90,7 @@ img,svg{display:block;max-width:100%}
 .sidenav a.active{color:var(--ink)}
 .sidenav a.active .n{color:var(--slate)}
 .sidenav a.active::after{background:var(--mint)}
-main{padding-right:172px}
+main{padding-right:196px}
 
 /* ============ SECTIONS ============ */
 section{padding:104px 0}
@@ -152,8 +152,8 @@ h2{
 .hero-art svg{width:100%;height:100%}
 .hero-art img{
   width:100%;height:100%;object-fit:cover;display:block;
-  -webkit-mask-image:radial-gradient(ellipse at 50% 42%, #000 42%, transparent 75%);
-  mask-image:radial-gradient(ellipse at 50% 42%, #000 42%, transparent 75%);
+  -webkit-mask-image:radial-gradient(115% 105% at 50% 42%, #000 58%, transparent 99%);
+  mask-image:radial-gradient(115% 105% at 50% 42%, #000 58%, transparent 99%);
 }
 
 /* ============ STATS ============ */
@@ -738,15 +738,26 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
     });
   }
   if("IntersectionObserver" in window){
-    var navObs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting) setActive(e.target.id);
+    var navTicking = false;
+    function updateNav(){
+      navTicking = false;
+      var line = window.scrollY + window.innerHeight * 0.4;
+      var current = secIds[0];
+      secIds.forEach(function(id){
+        var el = document.getElementById(id);
+        if(el && el.getBoundingClientRect().top + window.scrollY <= line) current = id;
       });
-    }, {rootMargin:"-40% 0px -55% 0px"});
-    secIds.forEach(function(id){
-      var el = document.getElementById(id);
-      if(el) navObs.observe(el);
-    });
+      if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60){
+        current = secIds[secIds.length - 1];
+      }
+      setActive(current);
+    }
+    function requestNavUpdate(){
+      if(!navTicking){ navTicking = true; requestAnimationFrame(updateNav); }
+    }
+    window.addEventListener("scroll", requestNavUpdate, {passive:true});
+    window.addEventListener("resize", requestNavUpdate);
+    updateNav();
   }
 
   /* ---------- Reveal on scroll ---------- */
