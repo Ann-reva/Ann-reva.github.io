@@ -150,7 +150,11 @@ h2{
   aspect-ratio:4/4.6;overflow:hidden;position:relative;
 }
 .hero-art svg{width:100%;height:100%}
-.hero-art img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-art img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  -webkit-mask-image:radial-gradient(115% 105% at 50% 42%, #000 58%, transparent 99%);
+  mask-image:radial-gradient(115% 105% at 50% 42%, #000 58%, transparent 99%);
+}
 
 /* ============ STATS ============ */
 .stats{padding:0 0 104px}
@@ -184,7 +188,7 @@ h2{
 }
 .work-visual{
   border:1px solid var(--line);border-radius:10px;background:var(--bg);
-  padding:28px;margin-bottom:32px;min-height:300px;
+  padding:28px;margin-bottom:32px;height:380px;
   display:flex;align-items:center;justify-content:center;
 }
 .card-status{
@@ -389,6 +393,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
   .stat-num{font-size:38px}
   .work-grid{grid-template-columns:1fr}
   .builds-grid{grid-template-columns:1fr}
+  .work-visual{height:auto;min-height:280px}
   .cap-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .cap-card{padding:20px 14px}
   .cap-num{margin-bottom:12px;font-size:10px}
@@ -666,11 +671,11 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
       </div>
       <div class="creds reveal">
         <div class="cred">
-          <span class="cred-icon" aria-hidden="true">◈</span>
+          <span class="cred-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 22 9l-10 5L2 9l10-5z"/><path d="M6 11.2V16c0 1.6 2.7 2.8 6 2.8s6-1.2 6-2.8v-4.8"/><path d="M22 9v5"/></svg></span>
           <div><strong>2 Master's degrees</strong><span>Computer Science · Economics</span></div>
         </div>
         <div class="cred">
-          <span class="cred-icon" aria-hidden="true">✦</span>
+          <span class="cred-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="5"/><path d="M8.6 3.5 11 10.2M15.4 3.5 13 10.2"/></svg></span>
           <div><strong>PMP<sup>&reg;</sup> + CSM<sup>&reg;</sup></strong><span>Project Management Professional · Certified ScrumMaster</span></div>
         </div>
       </div>
@@ -879,6 +884,16 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
   }
   if(document.fonts && document.fonts.ready){ document.fonts.ready.then(scheduleCaps); }
   updateCaps();
+
+  /* ---------- Email button (assembled in JS to deter scrapers) ---------- */
+  var contactRow = document.querySelector("#contact .btn-row");
+  if(contactRow){
+    var eb = document.createElement("a");
+    eb.className = "btn btn-secondary";
+    eb.textContent = "Email me";
+    eb.setAttribute("href", "mailto:" + "hello" + "@" + "anyalazarenko" + "." + "com");
+    contactRow.appendChild(eb);
+  }
 })();
 </script>
 </body>
