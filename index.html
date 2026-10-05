@@ -549,7 +549,17 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
                   <span class="steps-number">3</span>
                   <span class="steps-text">AI feedback<br>and explanation</span>
                 </div>
-                <svg class="steps-arrows" aria-hidden="true"><path></path><path></path></svg>
+                <svg class="steps-arrows" aria-hidden="true">
+                  <defs>
+                    <marker id="stepArrowHead" viewBox="0 0 10 10" refX="8" refY="5"
+                      markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+                      <path d="M 0.8 1.2 L 8.8 5 L 0.8 8.8" fill="none" stroke="#5B7FA6"
+                        stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </marker>
+                  </defs>
+                  <path marker-end="url(#stepArrowHead)"></path>
+                  <path marker-end="url(#stepArrowHead)"></path>
+                </svg>
               </div>
             </div>
           </div>
@@ -776,7 +786,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
     return {
       stack: stack,
       cards: Array.prototype.slice.call(stack.querySelectorAll(".steps-card")),
-      arrows: Array.prototype.slice.call(stack.querySelectorAll(".steps-arrows path"))
+      arrows: Array.prototype.slice.call(stack.querySelectorAll(".steps-arrows > path"))
     };
   });
   var pending = false;
@@ -807,9 +817,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
         var ox = Math.max(x1, x2) + 30;
         arrow.setAttribute("d",
           "M " + x1 + " " + y1 +
-          " C " + ox + " " + (y1 + 12) + ", " + ox + " " + (y2 - 12) + ", " + x2 + " " + y2 +
-          " M " + x2 + " " + y2 + " L " + (x2 + 3) + " " + (y2 - 10) +
-          " M " + x2 + " " + y2 + " L " + (x2 + 10) + " " + (y2 - 3));
+          " C " + ox + " " + (y1 + 12) + ", " + ox + " " + (y2 - 12) + ", " + x2 + " " + y2);
       });
     });
   }
