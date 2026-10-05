@@ -69,7 +69,7 @@ img,svg{display:block;max-width:100%}
 
 /* ============ SIDE NAV ============ */
 .sidenav{
-  position:fixed;top:64px;right:0;bottom:0;z-index:40;width:196px;
+  position:fixed;top:64px;right:0;bottom:0;z-index:40;width:212px;
   border-left:1px solid var(--line);
   background:rgba(253,254,254,.7);
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
@@ -77,20 +77,20 @@ img,svg{display:block;max-width:100%}
 }
 .sidenav a{
   display:flex;align-items:center;gap:12px;white-space:nowrap;
-  font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.1em;
+  font-family:"IBM Plex Mono",monospace;font-size:15px;letter-spacing:.08em;
   color:var(--faint);padding:11px 0;position:relative;
   transition:color .25s ease;
 }
 .sidenav a .n{color:var(--faint);transition:color .25s ease}
 .sidenav a::after{
-  content:"";width:6px;height:6px;border-radius:50%;
+  content:"";width:8px;height:8px;border-radius:50%;
   background:transparent;margin-left:auto;transition:background .25s ease;
 }
 .sidenav a:hover{color:var(--ink)}
 .sidenav a.active{color:var(--ink)}
 .sidenav a.active .n{color:var(--slate)}
 .sidenav a.active::after{background:var(--mint)}
-main{padding-right:196px}
+main{padding-right:212px}
 
 /* ============ AURORA (northern-lights wash, brand colors) ============ */
 .aurora{position:fixed;inset:-30% 0;z-index:0;pointer-events:none;overflow:hidden}
