@@ -339,6 +339,14 @@ h2{
 .btn-pill .arr{transition:transform .2s ease}
 .btn-pill:hover .arr{transform:translateX(4px)}
 
+/* ============ BOTTOM-ANCHORED CTA ROW ON FLIP BACKS (desktop) ============ */
+@media (min-width:641px){
+  .back-actions{position:absolute;display:flex;align-items:center;gap:14px;z-index:2}
+  .agent-back .back-actions{bottom:26px;left:28px}
+  .lexiq-back-info{position:relative;height:100%;justify-content:center}
+  .lexiq-back-info .back-actions{bottom:-1px;left:0}
+}
+
 /* ============ INSTALL HINT (LexiQ back) ============ */
 .install-hint{font-size:12.5px;color:var(--muted);max-width:250px}
 .install-hint summary{
@@ -672,8 +680,10 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
                   <li>Release go/no-go recommendations</li>
                 </ul>
                 <p class="agent-back-note">The PM decides. The agent proposes.</p>
-                <a class="btn-pill" href="https://github.com/Ann-reva/pm-agent-toolkit" target="_blank" rel="noopener">View on GitHub <span class="arr" aria-hidden="true">&rarr;</span></a>
-                <button class="flip-back-btn" id="agentUnflipBtn">&larr; Back</button>
+                <div class="back-actions">
+                  <a class="btn-pill" href="https://github.com/Ann-reva/pm-agent-toolkit" target="_blank" rel="noopener">View on GitHub <span class="arr" aria-hidden="true">&rarr;</span></a>
+                  <button class="flip-back-btn" id="agentUnflipBtn">&larr; Back</button>
+                </div>
               </div>
             </div>
           </div>
@@ -730,12 +740,14 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
                 <div class="lexiq-back-info">
                   <img class="lexiq-qr" src="lexiq-qr.png" alt="QR code — scan to open LexiQ on your phone">
                   <p>Scan for your phone — free forever, no account needed.</p>
-                  <a class="btn-pill" href="https://lexiq-anya-98b0.vercel.app" target="_blank" rel="noopener">Try LexiQ on web <span class="arr" aria-hidden="true">&rarr;</span></a>
                   <details class="install-hint">
                     <summary>📲 Install it like an app</summary>
                     <p><strong>iPhone:</strong> open in Safari → Share → Add to Home Screen<br><strong>Android:</strong> open in Chrome → ⋮ → Add to Home screen</p>
                   </details>
-                  <button class="flip-back-btn" id="lexiqUnflipBtn">&larr; Back</button>
+                  <div class="back-actions">
+                    <a class="btn-pill" href="https://lexiq-anya-98b0.vercel.app" target="_blank" rel="noopener">Try LexiQ on web <span class="arr" aria-hidden="true">&rarr;</span></a>
+                    <button class="flip-back-btn" id="lexiqUnflipBtn">&larr; Back</button>
+                  </div>
                 </div>
               </div>
             </div>
