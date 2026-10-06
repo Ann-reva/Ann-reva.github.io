@@ -284,15 +284,29 @@ h2{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   padding:24px 28px;gap:12px;
 }
+.lexiq-front{padding-bottom:78px}
 .lexiq-front .lexiq-visual{width:100%;flex:1;min-height:0;margin:0;overflow:hidden;transform:scale(.76);transform-origin:top center}
 .flip-trigger{
+  position:absolute;bottom:22px;left:50%;transform:translateX(-50%);white-space:nowrap;
   font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.04em;
   background:var(--ink,#22333B);color:#fff;border:none;border-radius:999px;
   padding:10px 22px;cursor:pointer;flex-shrink:0;
   box-shadow:0 6px 18px rgba(34,51,59,.25);transition:transform .15s ease;
 }
-.flip-trigger:hover{transform:translateY(-1px)}
-.flip-trigger:active{transform:scale(.97)}
+.flip-trigger:hover{transform:translateX(-50%) translateY(-1px)}
+.flip-trigger:active{transform:translateX(-50%) scale(.97)}
+.flip-trigger::after{
+  content:"";position:absolute;inset:-2px;border-radius:999px;pointer-events:none;
+  border:2px solid rgba(91,127,166,.5);
+  animation:trigger-pulse 2.6s ease-out infinite;
+}
+.flip-trigger.used::after{display:none}
+@keyframes trigger-pulse{
+  0%{transform:scale(1);opacity:.6}
+  70%{transform:scale(1.14);opacity:0}
+  100%{transform:scale(1.14);opacity:0}
+}
+@media (prefers-reduced-motion:reduce){.flip-trigger::after{animation:none;display:none}}
 .lexiq-back{transform:rotateY(180deg);flex-direction:row;gap:30px;background:var(--bg)}
 .lexiq-demo-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0}
 .lexiq-demo{
@@ -313,11 +327,19 @@ h2{
 .flip-back-btn:hover{color:var(--ink,#22333B);border-color:var(--muted)}
 
 /* ============ INSTALL HINT (LexiQ back) ============ */
-.install-hint{font-size:13.5px;color:var(--muted);max-width:250px}
-.install-hint summary{cursor:pointer;font-weight:600;color:var(--ink,#22333B);list-style:none}
+.install-hint{font-size:12.5px;color:var(--muted);max-width:250px}
+.install-hint summary{
+  cursor:pointer;font-weight:700;font-size:14px;color:var(--ink,#22333B);
+  list-style:none;display:flex;align-items:center;gap:6px;
+}
 .install-hint summary::-webkit-details-marker{display:none}
+.install-hint summary::after{
+  content:"▾";font-size:11px;color:var(--muted);
+  display:inline-block;transition:transform .2s ease;
+}
+.install-hint[open] summary::after{transform:rotate(180deg)}
 .install-hint summary:hover{text-decoration:underline}
-.install-hint p{margin:8px 0 0;line-height:1.65}
+.install-hint p{margin:8px 0 0;line-height:1.65;font-size:12.5px}
 .install-hint strong{color:var(--ink,#22333B)}
 @media (max-width:640px){
   .work-visual.lexiq-flip{height:640px}
@@ -647,7 +669,6 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
           <div class="work-big">30 min &rarr; 2 min</div>
           <h3>AI-assisted feature planning</h3>
           <p class="desc">Four Claude Code agents support work breakdown and dependencies, risk scoring, weekly status reporting, and release go/no-go recommendations. The PM decides. The agent proposes.</p>
-          <a class="text-link" href="https://github.com/Ann-reva/pm-agent-toolkit" target="_blank" rel="noopener">View on GitHub <span class="arr" aria-hidden="true">&rarr;</span></a>
         </article>
 
         <!-- LexiQ -->
@@ -710,7 +731,6 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
           <p class="card-status"><span class="dot"></span>LexiQ&nbsp;&nbsp;·&nbsp;&nbsp;Live</p>
           <h3>Free English flashcards that stick</h3>
           <p class="desc">LexiQ turns anything you want to learn into flashcards: your own decks, CSV import with an AI prompt template, pronunciation, and SM-2 spaced repetition. No account, no backend — free forever, installable on any phone.</p>
-          <a class="text-link" href="https://lexiq-anya-98b0.vercel.app" target="_blank" rel="noopener">Try LexiQ on web <span class="arr" aria-hidden="true">&rarr;</span></a>
           <div class="tag-row">
             <span class="tag">PWA</span>
             <span class="tag">SM-2 spaced repetition</span>
@@ -1098,6 +1118,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
     if(btn) btn.addEventListener("click", function(e){
       e.stopPropagation();
       card.classList.add("flipped");
+      btn.classList.add("used");
     });
     if(backBtn) backBtn.addEventListener("click", function(e){
       e.stopPropagation();
@@ -1115,6 +1136,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
     document.getElementById("lexiqFlipBtn").addEventListener("click", function(e){
       e.stopPropagation();
       lexiqFlip.classList.add("flipped");
+      this.classList.add("used");
       if(demoVideo && demoVideo.paused && !reduceMotion){ demoVideo.play().catch(function(){}); }
     });
     document.getElementById("lexiqUnflipBtn").addEventListener("click", function(e){
