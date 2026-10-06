@@ -293,16 +293,18 @@ h2{
 }
 .flip-trigger:hover{transform:translateY(-1px)}
 .flip-trigger:active{transform:scale(.97)}
-.lexiq-back{transform:rotateY(180deg);flex-direction:row;gap:26px;background:var(--bg)}
+.lexiq-back{transform:rotateY(180deg);flex-direction:row;gap:30px;background:var(--bg)}
+.lexiq-demo-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0}
 .lexiq-demo{
-  height:300px;width:auto;border-radius:22px;flex-shrink:0;
+  height:340px;width:auto;border-radius:22px;
   border:1px solid var(--line);box-shadow:0 12px 32px rgba(34,51,59,.18);
   background:#000;
 }
-.lexiq-back-info{display:flex;flex-direction:column;align-items:flex-start;gap:10px;max-width:230px}
-.lexiq-qr{width:104px;height:104px;border-radius:12px;border:1px solid var(--line);background:#fff}
-.lexiq-back-info p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.5}
-.lexiq-back-info .text-link{font-size:15px}
+.lexiq-demo-label{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.lexiq-back-info{display:flex;flex-direction:column;align-items:flex-start;gap:10px;max-width:250px}
+.lexiq-qr{width:140px;height:140px;border-radius:14px;border:1px solid var(--line);background:#fff}
+.lexiq-back-info p{margin:0;font-size:16px;font-weight:600;line-height:1.5;color:var(--ink)}
+.lexiq-back-info .text-link{font-size:16px}
 .flip-back-btn{
   font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.04em;
   background:none;border:1px solid var(--line);border-radius:999px;
@@ -311,16 +313,17 @@ h2{
 .flip-back-btn:hover{color:var(--ink,#22333B);border-color:var(--muted)}
 
 /* ============ INSTALL HINT (LexiQ back) ============ */
-.install-hint{font-size:13.5px;color:var(--muted);max-width:230px}
+.install-hint{font-size:13.5px;color:var(--muted);max-width:250px}
 .install-hint summary{cursor:pointer;font-weight:600;color:var(--ink,#22333B);list-style:none}
 .install-hint summary::-webkit-details-marker{display:none}
 .install-hint summary:hover{text-decoration:underline}
 .install-hint p{margin:8px 0 0;line-height:1.65}
 .install-hint strong{color:var(--ink,#22333B)}
 @media (max-width:640px){
-  .work-visual.lexiq-flip{height:600px}
+  .work-visual.lexiq-flip{height:640px}
   .lexiq-back{flex-direction:column;gap:14px;justify-content:center}
-  .lexiq-demo{height:290px}
+  .lexiq-demo{height:270px}
+  .lexiq-qr{width:120px;height:120px}
   .lexiq-back-info{align-items:center;text-align:center;max-width:280px}
 }
 
@@ -686,12 +689,15 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
                 <button class="flip-trigger" id="lexiqFlipBtn">&#9654; See it in action</button>
               </div>
               <div class="lexiq-face lexiq-back" aria-hidden="true">
-                <video class="lexiq-demo" id="lexiqDemoVideo" src="lexiq-demo.mp4" poster="lexiq-demo-poster.png"
-                  muted loop playsinline autoplay preload="metadata" aria-label="LexiQ app demo video"></video>
+                <div class="lexiq-demo-wrap">
+                  <video class="lexiq-demo" id="lexiqDemoVideo" src="lexiq-demo.mp4" poster="lexiq-demo-poster.png"
+                    muted loop playsinline autoplay preload="metadata" aria-label="LexiQ app demo video"></video>
+                  <span class="lexiq-demo-label">This is how it looks</span>
+                </div>
                 <div class="lexiq-back-info">
                   <img class="lexiq-qr" src="lexiq-qr.png" alt="QR code — scan to open LexiQ on your phone">
-                  <p>Scan to try it on your phone. Free forever, no account needed.</p>
-                  <a class="text-link" href="https://lexiq-anya-98b0.vercel.app" target="_blank" rel="noopener">Try LexiQ live <span class="arr" aria-hidden="true">&rarr;</span></a>
+                  <p>Scan for your phone — free forever, no account needed.</p>
+                  <a class="text-link" href="https://lexiq-anya-98b0.vercel.app" target="_blank" rel="noopener">Try LexiQ on web <span class="arr" aria-hidden="true">&rarr;</span></a>
                   <details class="install-hint">
                     <summary>📲 Install it like an app</summary>
                     <p><strong>iPhone:</strong> open in Safari → Share → Add to Home Screen<br><strong>Android:</strong> open in Chrome → ⋮ → Add to Home screen</p>
@@ -704,7 +710,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
           <p class="card-status"><span class="dot"></span>LexiQ&nbsp;&nbsp;·&nbsp;&nbsp;Live</p>
           <h3>Free English flashcards that stick</h3>
           <p class="desc">LexiQ turns anything you want to learn into flashcards: your own decks, CSV import with an AI prompt template, pronunciation, and SM-2 spaced repetition. No account, no backend — free forever, installable on any phone.</p>
-          <a class="text-link" href="https://lexiq-anya-98b0.vercel.app" target="_blank" rel="noopener">Try LexiQ live <span class="arr" aria-hidden="true">&rarr;</span></a>
+          <a class="text-link" href="https://lexiq-anya-98b0.vercel.app" target="_blank" rel="noopener">Try LexiQ on web <span class="arr" aria-hidden="true">&rarr;</span></a>
           <div class="tag-row">
             <span class="tag">PWA</span>
             <span class="tag">SM-2 spaced repetition</span>
