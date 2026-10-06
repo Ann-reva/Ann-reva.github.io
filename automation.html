@@ -160,6 +160,23 @@ body{position:relative}
 @keyframes drift4{from{transform:translate(0,0) scale(1.05)}to{transform:translate(-6vw,-4vh) scale(1)}}
 @keyframes drift5{from{transform:translate(0,0) scale(1.1)}to{transform:translate(5vw,5vh) scale(1)}}
 @media (prefers-reduced-motion:reduce){.ab i{animation:none}}
+/* proof strip */
+.proof-row{display:flex;gap:44px;flex-wrap:wrap;margin-top:40px}
+.proof{display:flex;flex-direction:column;gap:6px}
+.proof b{font-size:28px;font-weight:800;letter-spacing:-.02em;background:var(--grad);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.proof span{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;color:var(--faint);text-transform:uppercase}
+
+/* faq */
+.faq-list{max-width:840px;margin-top:44px;border-top:1px solid var(--line)}
+.faq{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;
+  padding:22px 4px;font-weight:700;font-size:17px;letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:24px;font-weight:400;line-height:1;color:var(--slate);transition:transform .25s ease;flex-shrink:0}
+.faq[open] summary::after{transform:rotate(45deg)}
+.faq .faq-a{padding:0 4px 26px;color:var(--muted);font-size:15.5px;line-height:1.7;max-width:70ch}
+
 @media (max-width:1100px){.sidenav{display:none}main{padding-right:0}}
 
 @media (max-width:900px){
@@ -182,7 +199,8 @@ body{position:relative}
   <a href="#automate" data-sec="automate"><span class="n">02</span> AUTOMATE</a>
   <a href="#process" data-sec="process"><span class="n">03</span> PROCESS</a>
   <a href="#why" data-sec="why"><span class="n">04</span> WHY ME</a>
-  <a href="#free-review" data-sec="free-review"><span class="n">05</span> FREE REVIEW</a>
+  <a href="#faq" data-sec="faq"><span class="n">05</span> FAQ</a>
+  <a href="#free-review" data-sec="free-review"><span class="n">06</span> FREE REVIEW</a>
 </nav>
 
 <header class="topbar">
@@ -268,6 +286,45 @@ body{position:relative}
         <span class="tag">n8n</span><span class="tag">Make</span><span class="tag">APIs</span><span class="tag">AI agents</span>
         <span class="tag">+ the tools your business already uses</span>
       </div>
+      <div class="proof-row reveal">
+        <div class="proof"><b>9 yrs</b><span>at Snap</span></div>
+        <div class="proof"><b>15+</b><span>launches / quarter</span></div>
+        <div class="proof"><b>400M+</b><span>DAU ecosystem</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <p class="sec-label">FAQ</p>
+      <h2 class="reveal">Questions, answered.</h2>
+      <div class="faq-list">
+        <details class="faq reveal">
+          <summary>What happens in the free review?</summary>
+          <p class="faq-a">You tell me what's eating your time through the form below. I look at your actual process and tell you what's realistically automatable, what should stay human, and what a practical first version could look like. No commitment, no sales pitch.</p>
+        </details>
+        <details class="faq reveal">
+          <summary>How much will it cost?</summary>
+          <p class="faq-a">It depends on scope, which is exactly what the free review figures out. After it, you get a plain-English proposal with scope and price &mdash; you decide from there, before committing to anything.</p>
+        </details>
+        <details class="faq reveal">
+          <summary>How long does it take?</summary>
+          <p class="faq-a">I start with the smallest automation that's actually useful, so you see value fast &mdash; then we expand from there. You'll know the timeline for your specific case in the proposal.</p>
+        </details>
+        <details class="faq reveal">
+          <summary>Do I need to change the tools I already use?</summary>
+          <p class="faq-a">No. I connect the tools you already have &mdash; n8n, Make, APIs, AI agents, and the rest of your stack. New tools only enter the picture when there's a clear reason.</p>
+        </details>
+        <details class="faq reveal">
+          <summary>Will I be able to run it myself afterwards?</summary>
+          <p class="faq-a">Yes. Every engagement ends with a handoff: a working system plus a clear explanation of how it runs. No black boxes, no dependency on me for day-to-day operation.</p>
+        </details>
+        <details class="faq reveal">
+          <summary>What if my work shouldn't be automated?</summary>
+          <p class="faq-a">Then I'll tell you honestly. Some things should stay human, and identifying those is part of the review &mdash; I'd rather tell you &ldquo;don't automate this&rdquo; than sell you something you don't need.</p>
+        </details>
+      </div>
     </div>
   </section>
 
@@ -325,7 +382,7 @@ body{position:relative}
 
   /* chapter nav active state */
   var navLinks = Array.prototype.slice.call(document.querySelectorAll(".sidenav a"));
-  var secIds = ["intro","automate","process","why","free-review"];
+  var secIds = ["intro","automate","process","why","faq","free-review"];
   function setActive(id){
     navLinks.forEach(function(a){
       a.classList.toggle("active", a.getAttribute("data-sec") === id);
