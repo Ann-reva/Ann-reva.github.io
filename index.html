@@ -240,7 +240,7 @@ h2{
 .dot-soon{background:var(--berry)}
 
 /* flow diagram */
-.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;width:100%;max-width:420px}
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;width:100%;max-width:420px;transition:opacity .3s ease}
 .flow-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;position:relative}
 .flow-mid{display:flex;justify-content:center;padding:14px 0;position:relative}
 .flow-mid::before,.flow-mid::after{
@@ -279,6 +279,7 @@ h2{
 .work-visual.lexiq-flip{padding:0;perspective:1600px;overflow:hidden;cursor:default;height:450px}
 .lexiq-flip-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.32,.72,.28,1)}
 .lexiq-flip.flipped .lexiq-flip-inner{transform:rotateY(180deg)}
+.lexiq-flip.flipped .lexiq-front .flow{opacity:0}
 .lexiq-face{
   position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -362,6 +363,9 @@ h2{
 .install-hint p{margin:8px 0 0;line-height:1.65;font-size:12.5px}
 .install-hint strong{color:var(--ink,#22333B)}
 @media (max-width:640px){
+  .agent-back .back-actions{display:flex;flex-direction:column;align-items:stretch;gap:10px}
+  .agent-back .back-actions .btn-pill{justify-content:center}
+  .agent-back .back-actions .flip-back-btn{text-align:center}
   .work-visual.lexiq-flip{height:640px}
   .lexiq-back{flex-direction:column;gap:14px;justify-content:center}
   .lexiq-demo{height:270px}
