@@ -16,14 +16,14 @@
   --card:#FFFFFF;
   --ink:#22333B;
   --muted:#5B6E79;
-  --faint:#93A5B1;
+  --faint:#5B6E79;
   --line:#E4EBF1;
   --mint:#7FC4B2;
   --ice:#A9CCE3;
   --slate:#5B7FA6;
   --rose:#D9A0AC;
   --berry:#8E3A5C;
-  --signal:#5B7FA6;
+  --signal:#8E3A5C;
   --grad:linear-gradient(110deg,#7FC4B2 0%,#A9CCE3 30%,#5B7FA6 60%,#D9A0AC 100%);
   --shadow:0 18px 44px rgba(34,51,59,.08);
   --radius:14px;
@@ -408,6 +408,8 @@ h2{
   background:none;border:none;padding:0;margin-top:14px;cursor:pointer;color:var(--muted);
 }
 .flip-mini:hover{color:var(--ink,#22333B)}
+
+.hero h1{font-size:clamp(38px,4.5vw,64px);line-height:1.12}.hero-creds{font-size:13px;letter-spacing:.06em}
 </style>
 <style>
 /* ============ STEPS STACK (LexiQ) ============ */
@@ -606,13 +608,13 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
       <p class="sec-label">01&nbsp;&nbsp;/&nbsp;&nbsp;Intro</p>
       <div class="hero-grid">
         <div class="reveal in">
-          <h1>Turning complex ideas into <span class="grad-text nowrap">real impact.</span></h1>
-          <p class="lead">Technical program leader with 12+ years in tech and delivery, including 9 years at Snap, focused on cross-functional delivery, launch readiness, and scalable systems. I work at the intersection of product, engineering, and operations — and build AI tools that make delivery faster and clearer.</p>
+          <h1>I lead technical programs and build <span style="color:var(--berry)">practical AI workflows.</span></h1>
+          <p class="lead">Cross-functional delivery, launch readiness, and AI tools that make everyday work clearer and faster.</p>
           <div class="btn-row">
             <a class="btn btn-primary" href="#contact">Let's connect</a>
-            <a class="btn btn-secondary" href="#work">View my work <span aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-secondary" href="ai.html">Explore AI tools &amp; demos <span aria-hidden="true">&rarr;</span></a>
           </div>
-          <p class="hero-creds mono">PMP&ensp;·&ensp;CSM&ensp;·&ensp;9 years at Snap</p>
+          <p class="hero-creds mono">12+ years in tech&ensp;·&ensp;9 years at Snap<br>PMP&ensp;·&ensp;CSM</p>
         </div>
         <div class="hero-art reveal in" role="img" aria-label="Portrait of Anya Lazarenko">
           <img src="portrait-anya.webp" alt="Portrait of Anya Lazarenko" width="960" height="1104" fetchpriority="high">
@@ -624,6 +626,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
   <!-- STATS -->
   <div class="stats">
     <div class="wrap">
+      <p class="mono" style="color:var(--muted);margin-bottom:24px;font-size:14px">Career highlights · program delivery and operations at Snap</p>
       <div class="stats-grid" id="statsGrid">
         <div class="stat reveal">
           <div class="stat-num" data-target="15" data-suffix="+">0+</div>
@@ -639,7 +642,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
         </div>
         <div class="stat reveal">
           <div class="stat-num" data-target="400" data-suffix="M+">0M+</div>
-          <div class="stat-label">DAU product ecosystem scale</div>
+          <div class="stat-label">Snap product ecosystem: 400M+ daily active users<br><small>Company scale, not individual impact.</small></div>
         </div>
       </div>
     </div>
@@ -911,7 +914,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
       <div class="contact-grid">
         <h2 class="reveal">Let's talk.</h2>
         <div class="reveal">
-          <p class="lead">For TPM, program, and project management opportunities, the fastest way to reach me is LinkedIn.</p>
+          <p class="lead">For technical program leadership opportunities, connect with me on LinkedIn. For a workflow automation project, start with a <a href="automation.html">free automation review</a>.</p>
           <div class="btn-row">
             <a class="btn btn-primary" href="https://www.linkedin.com/in/anya-lazarenko" target="_blank" rel="noopener">Connect on LinkedIn <span aria-hidden="true">&rarr;</span></a>
             <a class="btn btn-secondary" href="https://github.com/Ann-reva" target="_blank" rel="noopener">GitHub</a>
