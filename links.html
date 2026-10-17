@@ -25,10 +25,10 @@ body{
 /* ---- live northern lights: bright, always moving ---- */
 .aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;filter:saturate(1.25)}
 .aurora .blob{position:absolute;border-radius:50%;filter:blur(46px);will-change:transform,opacity}
-.aurora .b1{width:72vw;height:72vw;left:-18vw;top:-24vw;background:radial-gradient(circle,rgba(127,196,178,.85) 0%,rgba(127,196,178,0) 66%);animation:drift-a 17s ease-in-out infinite alternate}
-.aurora .b2{width:64vw;height:64vw;right:-16vw;top:-8vw;background:radial-gradient(circle,rgba(169,204,227,.9) 0%,rgba(169,204,227,0) 66%);animation:drift-b 21s ease-in-out infinite alternate}
-.aurora .b3{width:58vw;height:58vw;left:-10vw;bottom:-20vw;background:radial-gradient(circle,rgba(217,160,172,.72) 0%,rgba(217,160,172,0) 66%);animation:drift-c 19s ease-in-out infinite alternate}
-.aurora .b4{width:52vw;height:52vw;right:-12vw;bottom:-14vw;background:radial-gradient(circle,rgba(91,127,166,.62) 0%,rgba(91,127,166,0) 66%);animation:drift-a 24s ease-in-out infinite alternate-reverse}
+.aurora .b1{width:72vw;height:72vw;left:-18vw;top:-24vw;background:radial-gradient(circle,rgba(127,196,178,.85) 0%,rgba(127,196,178,0) 66%);animation:drift-a 8s ease-in-out infinite alternate}
+.aurora .b2{width:64vw;height:64vw;right:-16vw;top:-8vw;background:radial-gradient(circle,rgba(169,204,227,.9) 0%,rgba(169,204,227,0) 66%);animation:drift-b 11s ease-in-out infinite alternate}
+.aurora .b3{width:58vw;height:58vw;left:-10vw;bottom:-20vw;background:radial-gradient(circle,rgba(217,160,172,.72) 0%,rgba(217,160,172,0) 66%);animation:drift-c 9s ease-in-out infinite alternate}
+.aurora .b4{width:52vw;height:52vw;right:-12vw;bottom:-14vw;background:radial-gradient(circle,rgba(91,127,166,.62) 0%,rgba(91,127,166,0) 66%);animation:drift-a 12s ease-in-out infinite alternate-reverse}
 .aurora .band{
   position:absolute;left:-22%;width:144%;height:34vh;pointer-events:none;
   filter:blur(26px);opacity:.75;will-change:transform,background-position;
@@ -36,15 +36,16 @@ body{
   background-size:220% 100%;
   border-radius:50%;
 }
-.aurora .band-1{top:-9vh;transform:rotate(-7deg);animation:curtain 13s ease-in-out infinite alternate}
-.aurora .band-2{top:15vh;transform:rotate(-10deg) scaleY(.72);opacity:.55;animation:curtain 17s ease-in-out infinite alternate-reverse}
-.aurora .band-3{bottom:-12vh;transform:rotate(-6deg) scaleY(.85);opacity:.5;animation:curtain 21s ease-in-out infinite alternate}
-@keyframes drift-a{from{transform:translate(0,0) scale(1)}to{transform:translate(9vw,6vh) scale(1.16)}}
-@keyframes drift-b{from{transform:translate(0,0) scale(1.1)}to{transform:translate(-8vw,9vh) scale(.96)}}
-@keyframes drift-c{from{transform:translate(0,0) scale(.98)}to{transform:translate(7vw,-7vh) scale(1.14)}}
+.aurora .band-1{--bo:.8;top:-9vh;animation:curtain 6s ease-in-out infinite alternate}
+.aurora .band-2{--bo:.6;top:15vh;animation:curtain 8s ease-in-out infinite alternate-reverse}
+.aurora .band-3{--bo:.55;bottom:-12vh;animation:curtain 10s ease-in-out infinite alternate}
+@keyframes drift-a{from{transform:translate(0,0) scale(1)}to{transform:translate(11vw,8vh) scale(1.22)}}
+@keyframes drift-b{from{transform:translate(0,0) scale(1.12)}to{transform:translate(-10vw,11vh) scale(.94)}}
+@keyframes drift-c{from{transform:translate(0,0) scale(.96)}to{transform:translate(9vw,-9vh) scale(1.18)}}
 @keyframes curtain{
-  from{background-position:0% 50%;transform:rotate(-7deg) translateX(-2.5%) translateY(0)}
-  to{background-position:100% 50%;transform:rotate(-5deg) translateX(2.5%) translateY(2.2vh)}
+  0%{background-position:0% 50%;transform:rotate(-8deg) translateX(-6%) translateY(0) scaleY(1);opacity:var(--bo)}
+  50%{background-position:55% 50%;transform:rotate(-5.5deg) translateX(1%) translateY(2.6vh) scaleY(1.14);opacity:calc(var(--bo) + .18)}
+  100%{background-position:100% 50%;transform:rotate(-7deg) translateX(6%) translateY(4.4vh) scaleY(.92);opacity:var(--bo)}
 }
 @media (prefers-reduced-motion:reduce){.aurora .blob,.aurora .band{animation:none}}
 body::after{
