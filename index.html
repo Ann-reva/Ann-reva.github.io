@@ -408,6 +408,13 @@ h2{
   background:none;border:none;padding:0;margin-top:14px;cursor:pointer;color:var(--muted);
 }
 .flip-mini:hover{color:var(--ink,#22333B)}
+
+/* ============ PRODUCT CARDS / PROOF STRIP (2026-11) ============ */
+.qr-visual{flex-direction:column;gap:20px;text-align:center}
+.qr-visual img{width:190px;height:190px;border-radius:16px;border:1px solid var(--line);background:#fff}
+.qr-cap{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.stat-word{font-weight:700;font-size:32px;line-height:1.18;letter-spacing:-.02em}
+.product-cta{margin-top:26px}
 </style>
 <style>
 /* ============ STEPS STACK (LexiQ) ============ */
@@ -583,12 +590,22 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
 
 <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
   <a href="#intro"><span class="n">01</span> INTRO</a>
-  <a href="#work"><span class="n">02</span> WORK</a>
-  <a href="#capabilities"><span class="n">03</span> CAPABILITIES</a>
-  <a href="#services"><span class="n">04</span> SERVICES</a>
-  <a href="#automation"><span class="n">05</span> AUTOMATION</a>
-  <a href="#contact"><span class="n">06</span> LET'S CONNECT</a>
+  <a href="#work"><span class="n">02</span> PRODUCTS</a>
+  <a href="#why"><span class="n">03</span> WHY I BUILD</a>
+  <a href="#experiments"><span class="n">04</span> EXPERIMENTS</a>
+  <a href="#contact"><span class="n">05</span> LET'S CONNECT</a>
 </nav>
+
+
+<nav class="sidenav" aria-label="Section navigation">
+  <a href="#intro" data-sec="intro"><span class="n">01</span> INTRO</a>
+  <a href="#work" data-sec="work"><span class="n">02</span> PRODUCTS</a>
+  <a href="#why" data-sec="why"><span class="n">03</span> WHY I BUILD</a>
+  <a href="#experiments" data-sec="experiments"><span class="n">04</span> EXPERIMENTS</a>
+  <a href="#contact" data-sec="contact"><span class="n">05</span> LET'S CONNECT</a>
+</nav>
+
+
 
 <nav class="sidenav" aria-label="Section navigation">
   <a href="#intro" data-sec="intro"><span class="n">01</span> INTRO</a>
@@ -606,11 +623,11 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
       <p class="sec-label">01&nbsp;&nbsp;/&nbsp;&nbsp;Intro</p>
       <div class="hero-grid">
         <div class="reveal in">
-          <h1>Turning complex ideas into <span class="grad-text nowrap">real impact.</span></h1>
-          <p class="lead">Technical program leader with 12+ years in tech and delivery, including 9 years at Snap, focused on cross-functional delivery, launch readiness, and scalable systems. I work at the intersection of product, engineering, and operations — and build AI tools that make delivery faster and clearer.</p>
+          <h1>Technical Program Manager <span class="grad-text">building AI products.</span></h1>
+          <p class="lead">I'm Anya Lazarenko. I spent 9 years at Snap leading technical programs across product, engineering, and operations. Today I also design and build AI products myself — two of them are live below, and you can open both right now.</p>
           <div class="btn-row">
-            <a class="btn btn-primary" href="#contact">Let's connect</a>
-            <a class="btn btn-secondary" href="#work">View my work <span aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-primary" href="#work">See the live products</a>
+            <a class="btn btn-secondary" href="#contact">Let's connect</a>
           </div>
           <p class="hero-creds mono">PMP&ensp;·&ensp;CSM&ensp;·&ensp;9 years at Snap</p>
         </div>
@@ -621,81 +638,31 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
     </div>
   </section>
 
-  <!-- STATS -->
-  <div class="stats">
-    <div class="wrap">
-      <div class="stats-grid" id="statsGrid">
-        <div class="stat reveal">
-          <div class="stat-num" data-target="15" data-suffix="+">0+</div>
-          <div class="stat-label">feature launches / quarter</div>
-        </div>
-        <div class="stat reveal">
-          <div class="stat-num" data-target="98" data-suffix="">0</div>
-          <div class="stat-label">teams coordinated across one program</div>
-        </div>
-        <div class="stat reveal">
-          <div class="stat-num" data-target="93" data-suffix="%+">0%+</div>
-          <div class="stat-label">reduction in past-SLA high-priority backlog</div>
-        </div>
-        <div class="stat reveal">
-          <div class="stat-num" data-target="400" data-suffix="M+">0M+</div>
-          <div class="stat-label">DAU product ecosystem scale</div>
-        </div>
-      </div>
-    </div>
-  </div>
   <!-- 02 / SELECTED WORK -->
   <section id="work">
     <div class="wrap">
-      <p class="sec-label">02&nbsp;&nbsp;/&nbsp;&nbsp;Selected work</p>
-      <h2 class="reveal">Build. Coordinate. Ship.</h2>
-      <p class="lead reveal">Technical program leadership, AI systems, and products — built around clear ownership, measurable outcomes, and reliable execution.</p>
+      <p class="sec-label">02&nbsp;&nbsp;/&nbsp;&nbsp;Live products</p>
+      <h2 class="reveal">Live products.</h2>
+      <p class="lead reveal">I designed and built both of these products myself. They are live now — open them and try them.</p>
 
       <div class="work-grid">
-        <!-- PM Agent Toolkit -->
+        <!-- Visible Local -->
         <article class="work-card reveal">
-          <div class="work-visual lexiq-flip" id="agentFlip">
-            <div class="lexiq-flip-inner">
-              <div class="lexiq-face lexiq-front" aria-hidden="false">
-                <div class="flow">
-                  <div class="flow-row">
-                    <div class="flow-node">PRD<br>&amp; context</div>
-                    <div class="flow-node">Dependencies<br>&amp; risks</div>
-                    <div class="flow-node">Weekly<br>status</div>
-                    <div class="flow-node">Release<br>readiness</div>
-                  </div>
-                  <div class="flow-mid">
-                    <span class="flow-center"><span class="spark">✦</span> Claude Code agents</span>
-                  </div>
-                  <div class="flow-row">
-                    <div class="flow-node">Plan<br>&amp; breakdown</div>
-                    <div class="flow-node">Analyze<br>&amp; score</div>
-                    <div class="flow-node">Report<br>&amp; summarize</div>
-                    <div class="flow-node">Recommend<br>go / no-go</div>
-                  </div>
-                </div>
-                <button class="flip-trigger" id="agentFlipBtn">&#9654; How it works</button>
-              </div>
-              <div class="lexiq-face agent-back" aria-hidden="true">
-                <p class="agent-back-label">What the agents do</p>
-                <ul class="agent-list">
-                  <li>Work breakdown &amp; dependencies</li>
-                  <li>Risk scoring</li>
-                  <li>Weekly status reporting</li>
-                  <li>Release go/no-go recommendations</li>
-                </ul>
-                <p class="agent-back-note">The PM decides. The agent proposes.</p>
-                <div class="back-actions">
-                  <a class="btn-pill" href="https://github.com/Ann-reva/pm-agent-toolkit" target="_blank" rel="noopener">View on GitHub <span class="arr" aria-hidden="true">&rarr;</span></a>
-                  <button class="flip-back-btn" id="agentUnflipBtn">&larr; Back</button>
-                </div>
-              </div>
-            </div>
+          <div class="work-visual qr-visual">
+            <img src="visible-qr.png" alt="QR code — scan to open Visible Local">
+            <span class="qr-cap">Scan to try it on your phone</span>
           </div>
-          <p class="card-status"><span class="dot"></span>PM Agent Toolkit&nbsp;&nbsp;·&nbsp;&nbsp;Shipped</p>
-          <div class="work-big">30 min &rarr; 2 min</div>
-          <h3>AI-assisted feature planning</h3>
-          <p class="desc">Four Claude Code agents support work breakdown and dependencies, risk scoring, weekly status reporting, and release go/no-go recommendations. The PM decides. The agent proposes.</p>
+          <p class="card-status"><span class="dot"></span>Visible Local&nbsp;&nbsp;·&nbsp;&nbsp;Live</p>
+          <h3>AI visibility for local businesses</h3>
+          <p class="desc">Visible Local checks whether AI search and chat assistants mention a small local business when people ask for what it offers. When the business is missing from the answers, it shows why, and what to fix, in plain language.</p>
+          <div class="product-cta">
+            <a class="btn btn-primary" href="https://visible-local-ai.vercel.app" target="_blank" rel="noopener">Visit live site <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Next.js</span>
+            <span class="tag">OpenAI API</span>
+            <span class="tag">Supabase</span>
+          </div>
         </article>
 
         <!-- LexiQ -->
@@ -766,155 +733,104 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
             <span class="tag">Web Speech API</span>
             <span class="tag">$0 stack</span>
           </div>
+                  <div class="product-cta"><a class="btn btn-primary" href="https://lexiq-anya-98b0.vercel.app" target="_blank" rel="noopener">Visit live site <span aria-hidden="true">&rarr;</span></a></div>
         </article>
       </div>
 
+    </div>
+  </section>
+
+  <!-- 03 / WHY I BUILD -->
+  <section id="why">
+    <div class="wrap">
+      <p class="sec-label">03&nbsp;&nbsp;/&nbsp;&nbsp;Why I build</p>
+      <h2 class="reveal">AI should be useful to everyone.</h2>
+      <p class="lead reveal">Most AI products are built for people who already work in tech. I build for everyone else: the small local business that needs customers to find it, and the person learning a new language for a new job or a new country. When AI search recommends a neighborhood business, that business can reach customers it never could before, and when a learning tool is free, anyone can start. I want the skills I built in big tech to do that kind of work.</p>
+    </div>
+  </section>
+
+  <!-- PROOF STRIP -->
+  <div class="stats">
+    <div class="wrap">
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat reveal">
+          <div class="stat-word">9 years</div>
+          <div class="stat-label">at Snap Inc., leading technical programs</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-word">PMP · CSM</div>
+          <div class="stat-label">Project Management Professional &amp; Certified ScrumMaster</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-word">2 master's degrees</div>
+          <div class="stat-label">Economics and Computer Science</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-word">Website Director</div>
+          <div class="stat-label">PMI Los Angeles chapter</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 / MORE EXPERIMENTS -->
+  <section id="experiments">
+    <div class="wrap">
+      <p class="sec-label">04&nbsp;&nbsp;/&nbsp;&nbsp;More experiments</p>
+      <h2 class="reveal">More experiments.</h2>
+      <p class="lead reveal">Open-source projects and studies, with the code on GitHub.</p>
+      <div class="builds-grid">
+        <article class="build-card flip-card" id="legalFlip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <p class="card-status"><span class="dot"></span>Legal Answer Evaluation&nbsp;&nbsp;·&nbsp;&nbsp;Shipped</p>
+                      <h3>How good are AI legal answers, really?</h3>
+                      <p class="desc">A reproducible evaluation study: 40-item benchmark with gold references, anchored rubric, independent model judges across vendors plus a human rating pass, and inter-rater agreement statistics.</p>
+                      <a class="btn-pill" href="https://github.com/Ann-reva/legal-eval" target="_blank" rel="noopener">View on GitHub <span class="arr" aria-hidden="true">&rarr;</span></a>
+                      <div class="tag-row">
+                        <span class="tag">AI eval</span>
+                        <span class="tag">LLM judges</span>
+                        <span class="tag">Statistics</span>
+                      </div>
+                      <button class="flip-mini" id="legalFlipBtn">&#10227; Flip for details</button>
+                    </div>
+                    <div class="flip-card-back" aria-hidden="true">
+                      <p class="flip-back-kicker">Reproducible by design</p>
+                      <p class="body">40 gold-reference items, an anchored rubric, independent judges across vendors plus a human rating pass — everything needed to rerun the study from scratch.</p>
+                      <a class="btn-pill" href="https://github.com/Ann-reva/legal-eval" target="_blank" rel="noopener">View on GitHub <span class="arr" aria-hidden="true">&rarr;</span></a>
+                      <button class="flip-back-btn" id="legalUnflipBtn">&larr; Back</button>
+                    </div>
+                  </div>
+                </article>
+        <article class="build-card reveal">
+          <p class="card-status"><span class="dot"></span>PM Agent Toolkit&nbsp;&nbsp;·&nbsp;&nbsp;Shipped</p>
+          <h3>AI-assisted feature planning</h3>
+          <p class="desc">Four Claude Code agents support work breakdown and dependencies, risk scoring, weekly status reporting, and release go/no-go recommendations. The PM decides. The agent proposes.</p>
+          <a class="btn-pill" href="https://github.com/Ann-reva/pm-agent-toolkit" target="_blank" rel="noopener">View on GitHub <span class="arr" aria-hidden="true">&rarr;</span></a>
+          <div class="tag-row">
+            <span class="tag">Claude Code</span>
+            <span class="tag">Agents</span>
+            <span class="tag">Program management</span>
+          </div>
+        </article>
+      </div>
       <div class="builds reveal">
-        <p class="builds-label">More builds</p>
-        <div class="builds-grid">
-          <article class="build-card flip-card" id="legalFlip">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <p class="card-status"><span class="dot"></span>Legal Answer Evaluation&nbsp;&nbsp;·&nbsp;&nbsp;Shipped</p>
-                <h3>How good are AI legal answers, really?</h3>
-                <p class="desc">A reproducible evaluation study: 40-item benchmark with gold references, anchored rubric, independent model judges across vendors plus a human rating pass, and inter-rater agreement statistics.</p>
-                <a class="btn-pill" href="https://github.com/Ann-reva/legal-eval" target="_blank" rel="noopener">View on GitHub <span class="arr" aria-hidden="true">&rarr;</span></a>
-                <div class="tag-row">
-                  <span class="tag">AI eval</span>
-                  <span class="tag">LLM judges</span>
-                  <span class="tag">Statistics</span>
-                </div>
-                <button class="flip-mini" id="legalFlipBtn">&#10227; Flip for details</button>
-              </div>
-              <div class="flip-card-back" aria-hidden="true">
-                <p class="flip-back-kicker">Reproducible by design</p>
-                <p class="body">40 gold-reference items, an anchored rubric, independent judges across vendors plus a human rating pass — everything needed to rerun the study from scratch.</p>
-                <a class="btn-pill" href="https://github.com/Ann-reva/legal-eval" target="_blank" rel="noopener">View on GitHub <span class="arr" aria-hidden="true">&rarr;</span></a>
-                <button class="flip-back-btn" id="legalUnflipBtn">&larr; Back</button>
-              </div>
-            </div>
-          </article>
-          <article class="build-card flip-card" id="visibleFlip">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <p class="card-status"><span class="dot"></span>Visible Local&nbsp;&nbsp;·&nbsp;&nbsp;Live</p>
-                <h3>AI visibility agent for local businesses</h3>
-                <p class="desc">Collects business-presence signals, spots visibility gaps, and generates recommendations for small local businesses. Built with coding agents — Next.js, TypeScript, Supabase, OpenAI API.</p>
-                <a class="btn-pill" href="https://visible-local-ai.vercel.app" target="_blank" rel="noopener">Try the live audit <span class="arr" aria-hidden="true">&rarr;</span></a>
-                <div class="tag-row">
-                  <span class="tag">Next.js</span>
-                  <span class="tag">OpenAI API</span>
-                  <span class="tag">Supabase</span>
-                </div>
-                <button class="flip-mini" id="visibleFlipBtn">&#10227; Flip for QR</button>
-              </div>
-              <div class="flip-card-back" aria-hidden="true">
-                <img class="mini-qr" src="visible-qr.png" alt="QR code — scan to open the Visible Local audit">
-                <p class="flip-back-kicker">Scan to run an audit on your phone</p>
-                <a class="btn-pill" href="https://visible-local-ai.vercel.app" target="_blank" rel="noopener">Try the live audit <span class="arr" aria-hidden="true">&rarr;</span></a>
-                <button class="flip-back-btn" id="visibleUnflipBtn">&larr; Back</button>
-              </div>
-            </div>
-          </article>
-        </div>
+        <p class="lead">I also build workflow automations for small teams — follow-ups, reporting, onboarding, and the repetitive work around them.</p>
+        <a class="text-link" href="automation.html">More about automation <span class="arr" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
 
-  <!-- 03 / CORE CAPABILITIES -->
-  <section id="capabilities">
-    <div class="wrap">
-      <p class="sec-label">03&nbsp;&nbsp;/&nbsp;&nbsp;Core capabilities</p>
-      <h2 class="reveal">Programs, delivery &amp; AI.</h2>
-      <p class="lead reveal">I combine program leadership with hands-on AI and automation work.</p>
-      <div class="cap-grid reveal">
-        <article class="cap-card">
-          <span class="cap-border" aria-hidden="true"></span>
-          <span class="cap-num">01</span>
-          <h3>Program &amp; Delivery</h3>
-          <p>Cross-functional execution, launch readiness, dependencies, risk management, and go/no-go decisions.</p>
-        </article>
-        <article class="cap-card">
-          <span class="cap-border" aria-hidden="true"></span>
-          <span class="cap-num">02</span>
-          <h3>Data-Driven Execution</h3>
-          <p>Metrics, dashboards, prioritization, and operational systems that turn program data into decisions.</p>
-        </article>
-        <article class="cap-card">
-          <span class="cap-border" aria-hidden="true"></span>
-          <span class="cap-num">03</span>
-          <h3>AI-Enabled Workflows</h3>
-          <p>AI agents, n8n, Make, APIs, local models, and workflows that automate repetitive delivery work.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 04 / SERVICES -->
-  <section id="services">
-    <div class="wrap">
-      <p class="sec-label">04&nbsp;&nbsp;/&nbsp;&nbsp;Services</p>
-      <div class="svc-list reveal">
-        <a class="svc-row" href="#contact" aria-label="Launch Readiness — get in touch">
-          <span class="svc-num">01</span>
-          <span class="svc-name">Launch Readiness</span>
-          <span class="svc-desc">Release governance, risk and dependency management.</span>
-          <span class="svc-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-        <a class="svc-row" href="#contact" aria-label="Release Process — get in touch">
-          <span class="svc-num">02</span>
-          <span class="svc-name">Release Process</span>
-          <span class="svc-desc">Make complex cross-functional delivery repeatable and visible.</span>
-          <span class="svc-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-        <a class="svc-row" href="#contact" aria-label="Fractional TPM — get in touch">
-          <span class="svc-num">03</span>
-          <span class="svc-name">Fractional TPM</span>
-          <span class="svc-desc">Technical program leadership without a full-time hire.</span>
-          <span class="svc-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-        <a class="svc-row" href="#contact" aria-label="Metrics & Reporting — get in touch">
-          <span class="svc-num">04</span>
-          <span class="svc-name">Metrics &amp; Reporting</span>
-          <span class="svc-desc">Turn delivery data into decisions leadership can use.</span>
-          <span class="svc-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-      </div>
-    </div>
-  </section>
-  <!-- 05 / WORKFLOW AUTOMATION -->
-  <section class="automation" id="automation">
-    <div class="wrap">
-      <p class="sec-label">05&nbsp;&nbsp;/&nbsp;&nbsp;Workflow automation</p>
-      <h2 class="reveal">Spend less time doing work a system can do for you.</h2>
-      <p class="lead reveal">I build AI and workflow automations for leads, follow-ups, reporting, onboarding, and repetitive operations.</p>
-      <div class="btn-row reveal">
-        <a class="btn btn-primary" href="automation.html">Get a free automation review <span aria-hidden="true">&rarr;</span></a>
-      </div>
-      <div class="creds reveal">
-        <div class="cred">
-          <span class="cred-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 22 9l-10 5L2 9l10-5z"/><path d="M6 11.2V16c0 1.6 2.7 2.8 6 2.8s6-1.2 6-2.8v-4.8"/><path d="M22 9v5"/></svg></span>
-          <div><strong>2 Master's degrees</strong><span>Computer Science · Economics</span></div>
-        </div>
-        <div class="cred">
-          <span class="cred-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="5"/><path d="M8.6 3.5 11 10.2M15.4 3.5 13 10.2"/></svg></span>
-          <div><strong>PMP<sup>&reg;</sup> + CSM<sup>&reg;</sup></strong><span>Project Management Professional · Certified ScrumMaster</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 / CONTACT -->
+  <!-- 05 / CONTACT -->
   <section id="contact">
     <div class="wrap">
-      <p class="sec-label">06&nbsp;&nbsp;/&nbsp;&nbsp;Contact</p>
+      <p class="sec-label">05&nbsp;&nbsp;/&nbsp;&nbsp;Contact</p>
       <div class="contact-grid">
         <h2 class="reveal">Let's talk.</h2>
         <div class="reveal">
           <p class="lead">For TPM, program, and project management opportunities, the fastest way to reach me is LinkedIn.</p>
           <div class="btn-row">
             <a class="btn btn-primary" href="https://www.linkedin.com/in/anya-lazarenko" target="_blank" rel="noopener">Connect on LinkedIn <span aria-hidden="true">&rarr;</span></a>
-            <a class="btn btn-secondary" href="https://github.com/Ann-reva" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </div>
@@ -953,7 +869,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 40px}
 
   /* ---------- Side nav active state ---------- */
   var navLinks = Array.prototype.slice.call(document.querySelectorAll(".sidenav a"));
-  var secIds = ["intro","work","capabilities","services","automation","contact"];
+  var secIds = ["intro","work","why","experiments","contact"];
   function setActive(id){
     navLinks.forEach(function(a){
       a.classList.toggle("active", a.getAttribute("data-sec") === id);
