@@ -2,12 +2,121 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The AUTOMATE Checklist — @tech.with.anya</title>
-<meta http-equiv="refresh" content="0; url=/ig/automate/automate-checklist-v7.pdf">
-<link rel="canonical" href="https://anyalazarenko.com/ig/automate/automate-checklist-v7.pdf">
+<meta name="description" content="Five automations from my real work with my AI assistant. About 50 minutes back a day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@400;600&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FAF4EA;--ink:#2E1B26;--berry:#8E3A5C;--ice:#A9CCE3;--sub:#544C46;--line:#EADBC7;--sample:#F0F6FA}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);background-image:repeating-linear-gradient(transparent,transparent 27px,var(--line) 28px);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.55;padding:28px 18px 48px}
+  .wrap{max-width:640px;margin:0 auto}
+  .pill{display:inline-block;background:var(--berry);color:#fff;font-family:Sora,sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;padding:7px 14px;border-radius:999px}
+  h1{font-family:Sora,sans-serif;font-weight:800;font-size:37px;line-height:1.12;margin:16px 0 12px}
+  h1 .hl{background:var(--ice);border-radius:10px;padding:0 8px;color:var(--berry)}
+  .berry{color:var(--berry);font-weight:600}
+  .sub{color:var(--sub);font-size:14.5px}
+  .btn{display:block;text-align:center;background:var(--berry);color:#fff;font-family:Sora,sans-serif;font-weight:700;font-size:16px;text-decoration:none;padding:14px 20px;border-radius:14px;margin:20px 0 6px}
+  .btn.ghost{background:#fff;color:var(--berry);border:2px solid var(--berry)}
+  .setup{background:#fff;border-radius:14px;padding:16px 18px;margin:22px 0 8px;box-shadow:0 2px 10px rgba(46,27,38,.06)}
+  .setup h2,.item h2{font-family:Sora,sans-serif;font-size:15px;letter-spacing:.05em;color:var(--berry);margin-bottom:8px}
+  .setup p{margin-bottom:8px;font-size:15px}
+  .item{margin-top:30px}
+  .item h2{font-size:19px;color:var(--ink);letter-spacing:0}
+  .intro{font-size:15.5px;margin-bottom:10px}
+  .prompt{background:#fff;border:1.5px solid var(--ice);border-radius:12px;padding:14px 16px;font-size:15px;white-space:pre-wrap;word-wrap:break-word}
+  .copy{margin-top:8px;background:var(--ice);color:var(--ink);border:0;font-family:Sora,sans-serif;font-weight:700;font-size:13px;padding:8px 16px;border-radius:999px;cursor:pointer}
+  .sample{background:var(--sample);border-radius:12px;padding:12px 16px;margin-top:10px;font-size:14.5px}
+  .sample b{font-family:Sora,sans-serif;font-size:12.5px;color:var(--berry);letter-spacing:.04em}
+  .need{color:var(--sub);font-size:14px;margin-top:10px}
+  .privacy{background:#FAEEF0;border-radius:14px;padding:16px 18px;margin-top:34px;font-size:14.5px}
+  .privacy h2{font-family:Sora,sans-serif;font-size:13.5px;color:var(--berry);letter-spacing:.05em;margin-bottom:8px}
+  .note{font-family:Caveat,cursive;font-size:27px;color:var(--berry);text-align:center;margin:28px 0 4px}
+  .cta{margin-top:22px;text-align:center}
+  .cta p{margin:10px 0}
+  .cta a{color:var(--berry);font-weight:600}
+  footer{text-align:center;color:var(--sub);font-size:13px;margin-top:34px}
+</style>
 </head>
 <body>
-<p>Your checklist is opening… If nothing happens, <a href="/ig/automate/automate-checklist-v7.pdf">tap here</a>.</p>
-<script>location.replace("/ig/automate/automate-checklist-v7.pdf");</script>
+<div class="wrap">
+  <span class="pill">THE AUTOMATE CHECKLIST</span>
+  <h1>STOP CHECKING.<br>START <span class="hl">AUTOMATING.</span></h1>
+  <p>Five automations from my real work with my AI assistant. Steal them, change the words in [brackets], make them yours.</p>
+  <p class="berry">What it gives me back: about 50 minutes a day.</p>
+  <p class="sub">Works with ChatGPT, Claude, Gemini and Grok — the one-time prompts work anywhere. Daily #1 needs inbox access; #2 needs scheduled tasks.</p>
+  <a class="btn" href="/ig/automate/automate-checklist-v7.pdf">Download the PDF version</a>
+
+  <div class="setup">
+    <h2>SET UP ONCE</h2>
+    <p>One-time prompts (3, 4, 5): paste into a new chat. Done.</p>
+    <p>Daily prompts (1, 2): do not hunt for a menu. Paste the prompt in a chat and tell the assistant to run it every morning and send you the result. ChatGPT and Gemini turn that into a scheduled task. Claude: scheduled tasks in the desktop app.</p>
+    <p>No schedule option in your app? Run the prompt yourself each morning. Still faster than checking everything by hand.</p>
+  </div>
+
+  <div class="item">
+    <h2>1. THE ACTION-ONLY INBOX</h2>
+    <div class="prompt" id="p1">Read my new emails in [Gmail]. Show me only the ones that need an action from me. For each one: who sent it, what they need, and the deadline. Skip newsletters, receipts and updates. If nothing needs me, say exactly that: nothing needs you today.</div>
+    <button class="copy" data-t="p1">Copy prompt</button>
+    <div class="sample"><b>SAMPLE OUTPUT — WHAT YOU GET BACK</b><br>• Client — the signed contract is back, needs your signature — today<br>• Landlord — lease renewal attached — by Friday<br>• 14 newsletters, receipts and updates — skipped</div>
+    <p class="need">You need: an assistant connected to your inbox — Claude or ChatGPT with a Gmail connector, or Gemini with Google Workspace (paid plan).</p>
+  </div>
+
+  <div class="item">
+    <h2>2. THE STATUS WATCHER</h2>
+    <div class="prompt" id="p2">Check [paste the link — a shipping page, a public status page, a job board] every morning at [8:00]. Tell me only if the status changed since yesterday, and say what changed. If nothing changed, one line is enough: no change.</div>
+    <button class="copy" data-t="p2">Copy prompt</button>
+    <p class="need">You need: one link you currently check by hand — a page that opens without a login. Scheduled tasks cannot see pages behind your password.</p>
+  </div>
+
+  <div class="item">
+    <h2>3. THE PRE-FLIGHT CHECK</h2>
+    <div class="prompt" id="p3">Here is my draft: [paste it]. Before I publish, check it against [the event page / the brief / the source numbers] and list every mismatch you find. Do not rewrite it. Only list what does not match.</div>
+    <button class="copy" data-t="p3">Copy prompt</button>
+    <p class="need">You need: nothing but the draft and the source it has to match.</p>
+  </div>
+
+  <div class="item">
+    <h2>4. THE BOOKING LINK</h2>
+    <p class="intro">The scheduling rule that ends the back-and-forth: never negotiate times in messages. One link does it.</p>
+    <div class="prompt" id="p4">Here is my booking link: [paste your Calendly or Cal.com link]. Draft a two-sentence reply to [paste their message] that shares the link and sounds like me: warm, short, no sales talk.</div>
+    <button class="copy" data-t="p4">Copy prompt</button>
+    <p class="need">You need: a free booking page (Calendly or Cal.com). Five minutes to create, once.</p>
+  </div>
+
+  <div class="item">
+    <h2>5. THE LIVE-CHECK RULE</h2>
+    <p class="intro">This one is not a chat prompt. Paste it into your assistant's custom instructions or project settings, once.</p>
+    <div class="prompt" id="p5">Before you tell me something is not done, outdated or unavailable, check the live source first — [the page / the file / the calendar] — and show me what you found, with the date you checked it. Never report 'not done' from memory.</div>
+    <button class="copy" data-t="p5">Copy prompt</button>
+    <p class="need">You need: an assistant with custom instructions (ChatGPT: Settings, then Personalization. Claude: a Project).</p>
+  </div>
+
+  <div class="privacy">
+    <h2>BEFORE YOU CONNECT ANYTHING</h2>
+    <p>Privacy, honestly: automation 1 works only if an AI can read your inbox. That is real access to private mail. Connect only an assistant you trust — and start with one automation, not all five.</p>
+  </div>
+
+  <p class="note">start with one. one is enough.</p>
+
+  <div class="cta">
+    <a class="btn" href="https://www.instagram.com/tech.with.anya">Follow @tech.with.anya — one new automation every week</a>
+    <a class="btn ghost" href="https://anyalazarenko.com/links">Own a local business? Get a free AI visibility audit</a>
+  </div>
+
+  <footer>© @tech.with.anya — the AUTOMATE checklist</footer>
+</div>
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = document.getElementById(b.dataset.t).innerText;
+    navigator.clipboard.writeText(t).then(function(){
+      b.textContent = 'Copied ✓';
+      setTimeout(function(){ b.textContent = 'Copy prompt'; }, 2000);
+    });
+  });
+});
+</script>
 </body>
 </html>
