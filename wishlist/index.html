@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Список желаний</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ice:#A9CCE3;
+    --berry:#8E3A5C;
+    --ink:#1d2733;
+    --muted:#5b6b7a;
+    --card:#ffffff;
+    --bg:#f2f7fb;
+    --line:#d9e6f0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.45;
+    padding:20px 14px 48px;
+  }
+  .wrap{max-width:560px;margin:0 auto}
+  h1{
+    font-family:'Sora',sans-serif;
+    font-size:28px;
+    font-weight:700;
+    margin:8px 0 6px;
+  }
+  .sub{color:var(--muted);font-size:15px;margin-bottom:22px}
+  h2{
+    font-family:'Sora',sans-serif;
+    font-size:17px;
+    font-weight:700;
+    color:var(--berry);
+    margin:26px 0 10px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:14px 16px;
+    margin-bottom:10px;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+  .card.booked{opacity:.75}
+  .name{font-weight:600;font-size:16px}
+  .desc{color:var(--muted);font-size:14px}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;flex-wrap:wrap}
+  .price{font-family:'Sora',sans-serif;font-weight:700;font-size:16px}
+  a.buy{
+    color:var(--berry);
+    font-weight:600;
+    font-size:14px;
+    text-decoration:none;
+    border-bottom:1px solid var(--ice);
+  }
+  button{
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    font-weight:600;
+    border-radius:999px;
+    padding:9px 18px;
+    cursor:pointer;
+    border:1px solid var(--berry);
+    background:var(--berry);
+    color:#fff;
+  }
+  button.cancel{background:#fff;color:var(--berry)}
+  button:disabled{background:var(--ice);border-color:var(--ice);color:#33506b;cursor:default}
+  .status{font-size:14px;font-weight:600;color:var(--berry)}
+  .status.mine{color:#2e7d4f}
+  .note{
+    background:#fff;
+    border:1px dashed var(--ice);
+    border-radius:14px;
+    padding:14px 16px;
+    font-size:15px;
+    margin-bottom:10px;
+  }
+  .note b{font-family:'Sora',sans-serif}
+  .foot{color:var(--muted);font-size:13px;margin-top:26px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Список желаний</h1>
+  <p class="sub">Если хочешь что-то из списка, нажми «Забронировать», и пункт отметится занятым для остальных. Передумаешь, бронь можно отменить с этого же телефона.</p>
+
+  <h2>До $30</h2>
+  <div id="shelf-30"></div>
+
+  <h2>Около $35</h2>
+  <div id="shelf-35"></div>
+
+  <h2>Около $100</h2>
+  <div id="shelf-100"></div>
+
+  <h2>Всегда в тему</h2>
+  <div class="note"><b>Подарочный сертификат</b> на любую сумму: Amazon, Zara, Skims или Gentle Monster.</div>
+  <div class="note"><b>Копилка на очки Gentle Monster</b>, около $300 с официального сайта. Если хочется скинуться, любая сумма в копилку будет супер.</div>
+
+  <p class="foot">Спасибо!</p>
+</div>
+
+<script>
+const SUPABASE_URL = "https://kpwomrmcmbeaalibtzmv.supabase.co";
+const SUPABASE_KEY = "sb_publishable_7cvLn_YcdDLA7e0gnJE_sQ_kik8qM_P";
+
+const ITEMS = [
+  { id:"king-never-flinch", shelf:"shelf-30",
+    name:"Стивен Кинг, «Never Flinch»",
+    desc:"Новая книга, твёрдая обложка",
+    price:"~$16",
+    link:"https://www.barnesandnoble.com/w/never-flinch-stephen-king/1146567426?ean=9781668089330",
+    linkText:"Barnes & Noble" },
+  { id:"vt-pdrn-cream-100", shelf:"shelf-30",
+    name:"Крем VT PDRN Cream 100",
+    desc:"Корейский уход, 50 мл",
+    price:"$26",
+    link:"https://www.amazon.com/dp/B0DG1NJDX1",
+    linkText:"Amazon" },
+  { id:"vt-reedle-shot-300", shelf:"shelf-30",
+    name:"VT Reedle Shot 300",
+    desc:"Сыворотка со спикулами, 50 мл",
+    price:"~$25",
+    link:"https://www.amazon.com/s?k=vt+cosmetics+reedle+shot+300",
+    linkText:"Amazon" },
+  { id:"neewer-cm5", shelf:"shelf-30",
+    name:"Петлички Neewer CM5, 2 шт",
+    desc:"Проводные петлички с разъёмом 3.5 мм",
+    price:"$24",
+    link:"https://www.amazon.com/dp/B0CV196ZCZ",
+    linkText:"Amazon" },
+  { id:"metal-detox-shampoo", shelf:"shelf-35",
+    name:"Шампунь L'Oréal Professionnel Metal Detox",
+    desc:"Против металлов из жёсткой воды",
+    price:"~$35",
+    link:"https://www.amazon.com/dp/B07BCCRWVT",
+    linkText:"Amazon" },
+  { id:"bio-ionic-curling-iron", shelf:"shelf-100",
+    name:"Плойка Bio Ionic Long Barrel 1.25\"",
+    desc:"Длинный ствол, диаметр 1.25 дюйма",
+    price:"$98",
+    link:"https://www.amazon.com/dp/B01J248HWM",
+    linkText:"Amazon" }
+];
+
+const headers = {
+  "apikey": SUPABASE_KEY,
+  "Authorization": "Bearer " + SUPABASE_KEY,
+  "Content-Type": "application/json"
+};
+
+let claimed = new Set();
+
+function tokenKey(id){ return "wl_token_" + id; }
+function myToken(id){ return localStorage.getItem(tokenKey(id)); }
+
+async function sha256hex(text){
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,"0")).join("");
+}
+
+function randomToken(){
+  const arr = new Uint8Array(24);
+  crypto.getRandomValues(arr);
+  return Array.from(arr).map(b => b.toString(16).padStart(2,"0")).join("");
+}
+
+async function loadClaimed(){
+  try{
+    const r = await fetch(SUPABASE_URL + "/rest/v1/wishlist_claimed_items?select=item_id", { headers });
+    if(!r.ok) throw new Error("load failed");
+    const rows = await r.json();
+    claimed = new Set(rows.map(x => x.item_id));
+  }catch(e){
+    claimed = new Set();
+  }
+  render();
+}
+
+function render(){
+  for(const shelfId of ["shelf-30","shelf-35","shelf-100"]){
+    document.getElementById(shelfId).innerHTML = "";
+  }
+  for(const item of ITEMS){
+    const isClaimed = claimed.has(item.id);
+    const mine = isClaimed && !!myToken(item.id);
+    const card = document.createElement("div");
+    card.className = "card" + (isClaimed ? " booked" : "");
+    let action = "";
+    if(!isClaimed){
+      action = '<button data-claim="' + item.id + '">Забронировать</button>';
+    } else if(mine){
+      action = '<span class="status mine">Вы забронировали</span> <button class="cancel" data-cancel="' + item.id + '">Отменить бронь</button>';
+    } else {
+      action = '<span class="status">Уже забронировано</span>';
+    }
+    card.innerHTML =
+      '<div class="name">' + item.name + '</div>' +
+      '<div class="desc">' + item.desc + '</div>' +
+      '<div class="row"><span class="price">' + item.price + '</span>' +
+      '<a class="buy" href="' + item.link + '" target="_blank" rel="noopener">Смотреть: ' + item.linkText + '</a></div>' +
+      '<div class="row">' + action + '</div>';
+    document.getElementById(item.shelf).appendChild(card);
+  }
+  document.querySelectorAll("[data-claim]").forEach(btn => {
+    btn.addEventListener("click", () => claim(btn.getAttribute("data-claim"), btn));
+  });
+  document.querySelectorAll("[data-cancel]").forEach(btn => {
+    btn.addEventListener("click", () => cancel(btn.getAttribute("data-cancel"), btn));
+  });
+}
+
+async function claim(id, btn){
+  btn.disabled = true;
+  btn.textContent = "Бронирую...";
+  const token = randomToken();
+  const hash = await sha256hex(token);
+  try{
+    const r = await fetch(SUPABASE_URL + "/rest/v1/rpc/claim_wishlist_item", {
+      method: "POST",
+      headers,
+      body: JSON.stringify({ p_item_id: id, p_token_hash: hash })
+    });
+    const ok = await r.json();
+    if(ok === true){
+      localStorage.setItem(tokenKey(id), token);
+    }
+  }catch(e){ /* state reload below shows the truth */ }
+  await loadClaimed();
+}
+
+async function cancel(id, btn){
+  btn.disabled = true;
+  btn.textContent = "Отменяю...";
+  const token = myToken(id);
+  if(token){
+    const hash = await sha256hex(token);
+    try{
+      const r = await fetch(SUPABASE_URL + "/rest/v1/rpc/cancel_wishlist_claim", {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ p_item_id: id, p_token_hash: hash })
+      });
+      const ok = await r.json();
+      if(ok === true){
+        localStorage.removeItem(tokenKey(id));
+      }
+    }catch(e){ /* state reload below shows the truth */ }
+  }
+  await loadClaimed();
+}
+
+render();
+loadClaimed();
+</script>
+</body>
+</html>
