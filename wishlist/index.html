@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Список желаний</title>
+<title>Wishlist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -27,42 +27,30 @@
     padding:20px 14px 48px;
   }
   .wrap{max-width:560px;margin:0 auto}
-  h1{
-    font-family:'Sora',sans-serif;
-    font-size:28px;
-    font-weight:700;
-    margin:8px 0 6px;
-  }
+  h1{font-family:'Sora',sans-serif;font-size:28px;font-weight:700;margin:8px 0 6px}
   .sub{color:var(--muted);font-size:15px;margin-bottom:22px}
-  h2{
-    font-family:'Sora',sans-serif;
-    font-size:17px;
-    font-weight:700;
-    color:var(--berry);
-    margin:26px 0 10px;
-  }
+  h2{font-family:'Sora',sans-serif;font-size:17px;font-weight:700;color:var(--berry);margin:26px 0 10px}
   .card{
     background:var(--card);
     border:1px solid var(--line);
     border-radius:14px;
     padding:14px 16px;
     margin-bottom:10px;
-    display:flex;
-    flex-direction:column;
-    gap:4px;
   }
   .card.booked{opacity:.75}
+  .card img{
+    width:100%;
+    height:210px;
+    object-fit:contain;
+    background:#fff;
+    border-radius:8px;
+    margin-bottom:10px;
+  }
   .name{font-weight:600;font-size:16px}
   .desc{color:var(--muted);font-size:14px}
   .row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;flex-wrap:wrap}
   .price{font-family:'Sora',sans-serif;font-weight:700;font-size:16px}
-  a.buy{
-    color:var(--berry);
-    font-weight:600;
-    font-size:14px;
-    text-decoration:none;
-    border-bottom:1px solid var(--ice);
-  }
+  a.buy{color:var(--berry);font-weight:600;font-size:14px;text-decoration:none;border-bottom:1px solid var(--ice)}
   button{
     font-family:'Inter',sans-serif;
     font-size:14px;
@@ -92,23 +80,23 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>Список желаний</h1>
-  <p class="sub">Если хочешь что-то из списка, нажми «Забронировать», и пункт отметится занятым для остальных. Передумаешь, бронь можно отменить с этого же телефона.</p>
+  <h1>Wishlist</h1>
+  <p class="sub">Want to get something from the list? Tap "Reserve" and it will show as taken for everyone else, no names, no sign-up. Changed your mind? You can cancel the reservation from the same phone or browser.</p>
 
-  <h2>До $30</h2>
+  <h2>Under $30</h2>
   <div id="shelf-30"></div>
 
-  <h2>Около $35</h2>
-  <div id="shelf-35"></div>
+  <h2>$35 to $40</h2>
+  <div id="shelf-40"></div>
 
-  <h2>Около $100</h2>
+  <h2>$75 to $100</h2>
   <div id="shelf-100"></div>
 
-  <h2>Всегда в тему</h2>
-  <div class="note"><b>Подарочный сертификат</b> на любую сумму: Amazon, Zara, Skims или Gentle Monster.</div>
-  <div class="note"><b>Копилка на очки Gentle Monster</b>, около $300 с официального сайта. Если хочется скинуться, любая сумма в копилку будет супер.</div>
+  <h2>Always a good idea</h2>
+  <div class="note"><b>A gift card</b> in any amount: Amazon, Zara, Skims, or Gentle Monster.</div>
+  <div class="note"><b>The big one I am saving for:</b> the Gentle Monster x Google AI glasses (Android XR with Gemini), from $449, out December 10. The easiest way to chip in is a Gentle Monster gift card in any amount, it will go straight toward the glasses.</div>
 
-  <p class="foot">Спасибо!</p>
+  <p class="foot">Thank you!</p>
 </div>
 
 <script>
@@ -116,42 +104,61 @@ const SUPABASE_URL = "https://kpwomrmcmbeaalibtzmv.supabase.co";
 const SUPABASE_KEY = "sb_publishable_7cvLn_YcdDLA7e0gnJE_sQ_kik8qM_P";
 
 const ITEMS = [
+  { id:"loreal-everpure-leave-in", shelf:"shelf-30",
+    name:"L'Oreal Paris EverPure 21-in-1 Leave-In Conditioner Spray",
+    desc:"Color care leave-in spray, 6.7 oz",
+    price:"~$10", img:"img/everpure.jpg",
+    link:"https://www.amazon.com/dp/B09HN5ZF8C" },
   { id:"king-never-flinch", shelf:"shelf-30",
-    name:"Стивен Кинг, «Never Flinch»",
-    desc:"Новая книга, твёрдая обложка",
-    price:"~$16",
-    link:"https://www.barnesandnoble.com/w/never-flinch-stephen-king/1146567426?ean=9781668089330",
-    linkText:"Barnes & Noble" },
-  { id:"vt-pdrn-cream-100", shelf:"shelf-30",
-    name:"Крем VT PDRN Cream 100",
-    desc:"Корейский уход, 50 мл",
-    price:"$26",
-    link:"https://www.amazon.com/dp/B0DG1NJDX1",
-    linkText:"Amazon" },
+    name:"Stephen King, \"Never Flinch\"",
+    desc:"The new novel, hardcover",
+    price:"~$16", img:"img/king.webp",
+    link:"https://www.amazon.com/s?k=never+flinch+stephen+king+hardcover" },
+  { id:"neewer-cm5", shelf:"shelf-30",
+    name:"Neewer CM5 Lavalier Microphones, 2-pack",
+    desc:"Wired lav mics, 3.5mm plug",
+    price:"$24", img:"img/neewer.jpg",
+    link:"https://www.amazon.com/dp/B0CV196ZCZ" },
   { id:"vt-reedle-shot-300", shelf:"shelf-30",
     name:"VT Reedle Shot 300",
-    desc:"Сыворотка со спикулами, 50 мл",
-    price:"~$25",
-    link:"https://www.amazon.com/s?k=vt+cosmetics+reedle+shot+300",
-    linkText:"Amazon" },
-  { id:"neewer-cm5", shelf:"shelf-30",
-    name:"Петлички Neewer CM5, 2 шт",
-    desc:"Проводные петлички с разъёмом 3.5 мм",
-    price:"$24",
-    link:"https://www.amazon.com/dp/B0CV196ZCZ",
-    linkText:"Amazon" },
-  { id:"metal-detox-shampoo", shelf:"shelf-35",
-    name:"Шампунь L'Oréal Professionnel Metal Detox",
-    desc:"Против металлов из жёсткой воды",
-    price:"~$35",
-    link:"https://www.amazon.com/dp/B07BCCRWVT",
-    linkText:"Amazon" },
+    desc:"Spicule essence, 50 ml",
+    price:"~$25", img:"img/reedle.jpg",
+    link:"https://www.amazon.com/dp/B0C2TT4XP6" },
+  { id:"vt-pdrn-cream-100", shelf:"shelf-30",
+    name:"VT PDRN Cream 100",
+    desc:"Korean skincare cream, 50 ml",
+    price:"$26", img:"img/vt-cream.jpg",
+    link:"https://www.amazon.com/dp/B0DG1NJDX1" },
+  { id:"moroccanoil-conditioner", shelf:"shelf-30",
+    name:"Moroccanoil Color Care Conditioner",
+    desc:"For color-treated hair, 250 ml",
+    price:"~$28", img:"img/moroccanoil.png",
+    link:"https://www.amazon.com/dp/B0BSR6RRJR" },
+  { id:"metal-detox-shampoo", shelf:"shelf-40",
+    name:"L'Oreal Professionnel Metal Detox Shampoo",
+    desc:"Removes metal buildup from hard water",
+    price:"~$35", img:"img/metal-detox.jpg",
+    link:"https://www.amazon.com/dp/B07BCCRWVT" },
+  { id:"k18-ph-shampoo", shelf:"shelf-40",
+    name:"K18 PEPTIDE PREP pH Maintenance Shampoo",
+    desc:"Gentle everyday shampoo",
+    price:"~$36", img:"img/k18-ph.jpg",
+    link:"https://www.amazon.com/s?k=k18+peptide+prep+ph+maintenance+shampoo" },
+  { id:"k18-conditioner", shelf:"shelf-40",
+    name:"K18 Damage Shield Protective Conditioner",
+    desc:"Everyday protective conditioner",
+    price:"~$39", img:"img/k18-cond.jpg",
+    link:"https://www.amazon.com/s?k=k18+damage+shield+protective+conditioner" },
+  { id:"k18-mask", shelf:"shelf-100",
+    name:"K18 Leave-In Molecular Repair Hair Mask",
+    desc:"The famous repair mask, 50 ml",
+    price:"$75", img:"img/k18.jpg",
+    link:"https://www.amazon.com/s?k=k18+leave-in+molecular+repair+hair+mask+50ml" },
   { id:"bio-ionic-curling-iron", shelf:"shelf-100",
-    name:"Плойка Bio Ionic Long Barrel 1.25\"",
-    desc:"Длинный ствол, диаметр 1.25 дюйма",
-    price:"$98",
-    link:"https://www.amazon.com/dp/B01J248HWM",
-    linkText:"Amazon" }
+    name:"Bio Ionic Long Barrel Curling Iron 1.25\"",
+    desc:"Extra-long barrel styling iron",
+    price:"$98", img:"img/bio-ionic.jpg",
+    link:"https://www.amazon.com/dp/B01J248HWM" }
 ];
 
 const headers = {
@@ -189,7 +196,7 @@ async function loadClaimed(){
 }
 
 function render(){
-  for(const shelfId of ["shelf-30","shelf-35","shelf-100"]){
+  for(const shelfId of ["shelf-30","shelf-40","shelf-100"]){
     document.getElementById(shelfId).innerHTML = "";
   }
   for(const item of ITEMS){
@@ -199,17 +206,18 @@ function render(){
     card.className = "card" + (isClaimed ? " booked" : "");
     let action = "";
     if(!isClaimed){
-      action = '<button data-claim="' + item.id + '">Забронировать</button>';
+      action = '<button data-claim="' + item.id + '">Reserve</button>';
     } else if(mine){
-      action = '<span class="status mine">Вы забронировали</span> <button class="cancel" data-cancel="' + item.id + '">Отменить бронь</button>';
+      action = '<span class="status mine">Reserved by you</span> <button class="cancel" data-cancel="' + item.id + '">Cancel reservation</button>';
     } else {
-      action = '<span class="status">Уже забронировано</span>';
+      action = '<span class="status">Already reserved</span>';
     }
     card.innerHTML =
+      '<img src="' + item.img + '" alt="">' +
       '<div class="name">' + item.name + '</div>' +
       '<div class="desc">' + item.desc + '</div>' +
       '<div class="row"><span class="price">' + item.price + '</span>' +
-      '<a class="buy" href="' + item.link + '" target="_blank" rel="noopener">Смотреть: ' + item.linkText + '</a></div>' +
+      '<a class="buy" href="' + item.link + '" target="_blank" rel="noopener">View on Amazon</a></div>' +
       '<div class="row">' + action + '</div>';
     document.getElementById(item.shelf).appendChild(card);
   }
@@ -223,7 +231,7 @@ function render(){
 
 async function claim(id, btn){
   btn.disabled = true;
-  btn.textContent = "Бронирую...";
+  btn.textContent = "Reserving...";
   const token = randomToken();
   const hash = await sha256hex(token);
   try{
@@ -242,7 +250,7 @@ async function claim(id, btn){
 
 async function cancel(id, btn){
   btn.disabled = true;
-  btn.textContent = "Отменяю...";
+  btn.textContent = "Canceling...";
   const token = myToken(id);
   if(token){
     const hash = await sha256hex(token);
