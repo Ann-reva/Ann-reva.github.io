@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The TEAM Checklist — @tech.with.anya</title>
+<meta name="description" content="The 8 teamwork dimensions Stanford used to grade AI agents as teammates — as a checklist you can run on any agent.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@400;600&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FAF4EA;--ink:#2E1B26;--berry:#8E3A5C;--ice:#A9CCE3;--sub:#544C46;--line:#EADBC7;--sample:#F0F6FA}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);background-image:repeating-linear-gradient(transparent,transparent 27px,var(--line) 28px);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.55;padding:28px 18px 48px}
+  .wrap{max-width:640px;margin:0 auto}
+  .pill{display:inline-block;background:var(--berry);color:#fff;font-family:Sora,sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;padding:7px 14px;border-radius:999px}
+  h1{font-family:Sora,sans-serif;font-weight:800;font-size:37px;line-height:1.12;margin:16px 0 12px}
+  h1 .hl{background:var(--ice);border-radius:10px;padding:0 8px;color:var(--berry)}
+  .berry{color:var(--berry);font-weight:600}
+  .sub{color:var(--sub);font-size:14.5px}
+  .btn{display:block;text-align:center;background:var(--berry);color:#fff;font-family:Sora,sans-serif;font-weight:700;font-size:16px;text-decoration:none;padding:14px 20px;border-radius:14px;margin:20px 0 6px}
+  .btn.ghost{background:#fff;color:var(--berry);border:2px solid var(--berry)}
+  .setup{background:#fff;border-radius:14px;padding:16px 18px;margin:22px 0 8px;box-shadow:0 2px 10px rgba(46,27,38,.06)}
+  .setup h2{font-family:Sora,sans-serif;font-size:15px;letter-spacing:.05em;color:var(--berry);margin-bottom:8px}
+  .setup p{margin-bottom:8px;font-size:15px}
+  .item{margin-top:26px;background:#fff;border-radius:14px;padding:16px 18px;box-shadow:0 2px 10px rgba(46,27,38,.06)}
+  .item h2{font-family:Sora,sans-serif;font-size:18px;color:var(--ink);margin-bottom:6px}
+  .item h2 .box{color:var(--berry)}
+  .test{font-size:15px;margin-bottom:6px}
+  .good{font-size:15px}
+  .good b{font-family:Sora,sans-serif;font-size:12.5px;color:var(--berry);letter-spacing:.04em}
+  .privacy{background:#FAEEF0;border-radius:14px;padding:16px 18px;margin-top:34px;font-size:14.5px}
+  .privacy h2{font-family:Sora,sans-serif;font-size:13.5px;color:var(--berry);letter-spacing:.05em;margin-bottom:8px}
+  .note{font-family:Caveat,cursive;font-size:27px;color:var(--berry);text-align:center;margin:28px 0 4px}
+  .cta{margin-top:22px;text-align:center}
+  footer{text-align:center;color:var(--sub);font-size:13px;margin-top:34px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="pill">THE TEAM CHECKLIST</span>
+  <h1>GOOD AT THE TASK.<br><span class="hl">BAD TEAMMATE?</span></h1>
+  <p>Stanford graded 18 AI models the way you would grade a teammate, not a test-taker: 240 team tasks, 8 dimensions of teamwork. Every model had clear weaknesses. The best scored only <span class="berry">82.2 out of 100</span>.</p>
+  <p class="sub">Use the same 8 dimensions to check any agent before you let it work with your team. For each one: the way a team goes wrong, and what a good teammate does instead.</p>
+  <a class="btn" href="/ig/team/team-checklist.pdf">Download the PDF version</a>
+
+  <div class="setup">
+    <h2>THE TWO NUMBERS THAT MATTER</h2>
+    <p>Under pressure from a difficult colleague, models reached the best deal for the team in only <b>14% of conflicts</b>.</p>
+    <p>When a model took over work a weaker model had already cheated on, its pass rate fell from <b>97% to 81%</b>.</p>
+  </div>
+
+  <div class="item">
+    <h2><span class="box">☐</span> 1. RESISTING UNSAFE PRESSURE</h2>
+    <p class="test">The test: a teammate repeatedly pushes the agent to cut a corner that could cause harm.</p>
+    <p class="good"><b>A GOOD TEAMMATE</b> refuses, explains the risk, and offers a safe way to finish the work.</p>
+  </div>
+
+  <div class="item">
+    <h2><span class="box">☐</span> 2. REPORTING MISCONDUCT</h2>
+    <p class="test">The test: a teammate falsifies or hides a result and asks the agent to go along with it.</p>
+    <p class="good"><b>A GOOD TEAMMATE</b> reports the facts to the person accountable for the result.</p>
+  </div>
+
+  <div class="item">
+    <h2><span class="box">☐</span> 3. SHARING AND SEEKING INFORMATION</h2>
+    <p class="test">The test: a teammate holds the one fact that decides the answer, but does not see that it matters.</p>
+    <p class="good"><b>A GOOD TEAMMATE</b> asks until the team has every relevant fact, and only then decides.</p>
+  </div>
+
+  <div class="item">
+    <h2><span class="box">☐</span> 4. EMOTIONAL INTELLIGENCE</h2>
+    <p class="test">The test: a teammate who holds a key fact gets upset and withdraws.</p>
+    <p class="good"><b>A GOOD TEAMMATE</b> notices, responds to the colleague's concern, and brings them back into the work.</p>
+  </div>
+
+  <div class="item">
+    <h2><span class="box">☐</span> 5. KEEPING THE TEAM ON TRACK</h2>
+    <p class="test">The test: a senior teammate gets absorbed in a minor problem while the main deadline nears.</p>
+    <p class="good"><b>A GOOD TEAMMATE</b> steers the team back to the goal in time, and notes the concern for later.</p>
+  </div>
+
+  <div class="item">
+    <h2><span class="box">☐</span> 6. HANDLING CONFLICT</h2>
+    <p class="test">The test: a teammate on the same side presses hard for its own split and threatens to leave.</p>
+    <p class="good"><b>A GOOD TEAMMATE</b> stays respectful, asks what each side needs, and holds out for the outcome that is best for the whole team.</p>
+  </div>
+
+  <div class="item">
+    <h2><span class="box">☐</span> 7. TAKING INITIATIVE</h2>
+    <p class="test">The test: something the team needs is nobody's job, and nobody asks the agent to act.</p>
+    <p class="good"><b>A GOOD TEAMMATE</b> notices the need and acts on it, without neglecting its own work.</p>
+  </div>
+
+  <div class="item">
+    <h2><span class="box">☐</span> 8. TAKING OVER</h2>
+    <p class="test">The test: the agent takes over a session where a weaker model cheated on the tests or wrote a false record.</p>
+    <p class="good"><b>A GOOD TEAMMATE</b> checks the work it inherits, repairs it, tells the team, and makes no false claims about it.</p>
+  </div>
+
+  <div class="privacy">
+    <h2>SOURCE</h2>
+    <p>Wu, Pappu, Zou et al., "Measuring AI Agents as Teammates with Collaborative Intelligence", arXiv:2611.02633, November 2026. The Collaborative Intelligence Benchmark: 240 tasks, 18 models, each task counted only if the model could solve it alone first, so the score measures teamwork, not raw skill.</p>
+  </div>
+
+  <p class="note">skill is not teamwork.</p>
+
+  <div class="cta">
+    <a class="btn" href="https://www.instagram.com/tech.with.anya">Follow @tech.with.anya — one new automation every week</a>
+    <a class="btn ghost" href="https://anyalazarenko.com/links">Own a local business? Get a free AI visibility audit</a>
+  </div>
+
+  <footer>© @tech.with.anya — the TEAM checklist</footer>
+</div>
+</body>
+</html>
